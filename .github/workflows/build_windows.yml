@@ -47,13 +47,13 @@ jobs:
       - name: Install NSIS Plugin for x86-ansi
         run: |
           cp `
-          ./assets/windows/installer/NsisPlugin/AccessControl_x86_ansi.dll `
+          ./subprojects/windows_installer/NsisPlugin/AccessControl_x86_ansi.dll `
           "C:/Program Files (x86)/NSIS/Plugins/x86-ansi/AccessControl.dll"
 
       - name: Install NSIS Plugin for x86-unicode
         run: |
           cp `
-          ./assets/windows/installer/NsisPlugin/AccessControl_x86_unicode.dll `
+          ./subprojects/windows_installer/NsisPlugin/AccessControl_x86_unicode.dll `
           "C:/Program Files (x86)/NSIS/Plugins/x86-unicode/AccessControl.dll"
 
       - name: Build
