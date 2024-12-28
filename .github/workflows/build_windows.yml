@@ -24,11 +24,7 @@ jobs:
         run: subprojects/version_checker/build.ps1
 
       - name: Build vc++ installer script
-        run: |
-          pyinstaller --onefile `
-            --distpath ./dist_pyinstaller `
-            --workpath ./build_pyinstaller `
-            ./assets/windows/installer/check_vcpp_version_and_install.py
+        run: subprojects/vcpp_installer/build.ps1
 
       - name: Install Ninja
         run: choco install ninja

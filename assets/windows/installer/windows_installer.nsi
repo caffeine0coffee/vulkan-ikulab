@@ -74,7 +74,7 @@ Section
 
   ; VC++ Runtime Installer
   SetOutPath "$INSTDIR"
-  File "..\..\..\dist_pyinstaller\check_vcpp_version_and_install.exe"
+  File "..\..\..\assets\check_vcpp_version_and_install.exe"
   File "..\..\..\msvc_version.txt"
   File "..\..\..\vc_redist.x64.exe"
 
