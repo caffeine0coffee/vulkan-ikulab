@@ -1,7 +1,7 @@
 #!/bin/bash
 
 script_dir="$(realpath "$(dirname "${0}")")"
-project_root="$(realpath "${script_dir}/..")"
+project_root="$(realpath "${script_dir}/../..")"
 
 cd "${script_dir}" || exit 1
 pyinstaller main.py --onefile --distpath . --name imv_version_checker -y
