@@ -65,7 +65,7 @@ Section
 
   ; Version checker
   SetOutPath "$INSTDIR"
-  File "..\..\..\version_checker\imv_version_checker.exe"
+  File "..\..\..\assets\imv_version_checker.exe"
 
   ; Version info dir
   SetOutPath "$ALLUSERSPROFILE\ikulab-motion-viewer\version_info"
