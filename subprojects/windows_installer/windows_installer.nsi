@@ -56,9 +56,9 @@ Section
 
   ; Install files
   SetOutPath "$INSTDIR"
-  File "..\..\build_release_windows\app\ikulab-motion-viewer.exe"
-  File "..\..\build_release_windows\app\vulkan-1.dll"
-  File "..\..\build_release_windows\app\glfw3.dll"
+  File "..\..\build_release_windows\src\app\ikulab-motion-viewer.exe"
+  File "..\..\build_release_windows\src\app\vulkan-1.dll"
+  File "..\..\build_release_windows\src\app\glfw3.dll"
 
   SetOutPath "$INSTDIR\fonts"
   File "..\..\assets\fonts\NotoSansJP-Medium.otf"
