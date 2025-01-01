@@ -1,5 +1,12 @@
-build
-build_*
+/build
+/build_develop
+/build_debug
+/build_debug_windows
+/build_release_validation
+/build_release_validation_windows
+/build_release
+/build_release_windows
+
 vcpkg_installed
 
 .ccls-cache
