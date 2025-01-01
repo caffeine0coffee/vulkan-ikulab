@@ -38,9 +38,9 @@ if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
 endif ()
 
 # build ikura
-add_subdirectory(${CMAKE_SOURCE_DIR}/core/ikura)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/core/ikura)
 # build ikulab-motion-viewer
-add_subdirectory(${CMAKE_SOURCE_DIR}/app)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/app)
 # link ikura to ikulab-motion-viewer
 target_link_libraries(ikulab-motion-viewer PRIVATE ikura)
 
@@ -65,7 +65,7 @@ if (WIN32)
     endif ()
 endif ()
 
-configure_file(${CMAKE_SOURCE_DIR}/app/buildInfo.h.in ${CMAKE_SOURCE_DIR}/app/buildInfo.h)
+configure_file(${CMAKE_SOURCE_DIR}/src/app/buildInfo.h.in ${CMAKE_SOURCE_DIR}/src/app/buildInfo.h)
 configure_file(${CMAKE_SOURCE_DIR}/assets/macos/Info.plist.in ${CMAKE_SOURCE_DIR}/assets/macos/Info.plist)
 
 # ------------------------------------------------------------
