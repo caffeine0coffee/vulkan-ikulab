@@ -1,5 +1,5 @@
 Set-Location $PSScriptRoot
-Set-Location ..\..
+Set-Location ..
 
 cmake --preset=release-windows
 cmake --build build_release_windows
