@@ -39,10 +39,10 @@ jobs:
           key: ${{ runner.os }}-${{ runner.arch }}-vcpkg-${{ hashFiles('./vcpkg.json', './core/ikura/vcpkg.json') }}
 
       - name: save VC++ version file
-        run: bash ./utils/scripts/create_vcpp_version_file.sh
+        run: bash ./scripts/create_vcpp_version_file.sh
 
       - name: copy vc_redist.*.exe
-        run: bash ./utils/scripts/copy_vc_redist_exe.sh
+        run: bash ./scripts/copy_vc_redist_exe.sh
 
       - name: Install NSIS Plugin for x86-ansi
         run: |
@@ -57,7 +57,7 @@ jobs:
           "C:/Program Files (x86)/NSIS/Plugins/x86-unicode/AccessControl.dll"
 
       - name: Build
-        run: utils/scripts/build_win_package.ps1
+        run: ./scripts/build_win_package.ps1
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
