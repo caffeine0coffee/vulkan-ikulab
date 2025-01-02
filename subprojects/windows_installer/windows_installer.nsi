@@ -4,7 +4,7 @@
 ;General
 
 Name "ikulab-motion-viewer"
-OutFile "..\..\..\ikulab-motion-viewer_Installer.exe"
+OutFile "..\..\ikulab-motion-viewer_Installer.exe"
 Unicode True
 
 InstallDir "$PROGRAMFILES\ikulab-motion-viewer"
@@ -56,27 +56,27 @@ Section
 
   ; Install files
   SetOutPath "$INSTDIR"
-  File "..\..\..\build_release_windows\app\ikulab-motion-viewer.exe"
-  File "..\..\..\build_release_windows\app\vulkan-1.dll"
-  File "..\..\..\build_release_windows\app\glfw3.dll"
+  File "..\..\build_release_windows\src\app\ikulab-motion-viewer.exe"
+  File "..\..\build_release_windows\src\app\vulkan-1.dll"
+  File "..\..\build_release_windows\src\app\glfw3.dll"
 
   SetOutPath "$INSTDIR\fonts"
-  File "..\..\..\assets\fonts\NotoSansJP-Medium.otf"
+  File "..\..\assets\fonts\NotoSansJP-Medium.otf"
 
   ; Version checker
   SetOutPath "$INSTDIR"
-  File "..\..\..\version_checker\imv_version_checker.exe"
+  File "..\..\assets\imv_version_checker.exe"
 
   ; Version info dir
   SetOutPath "$ALLUSERSPROFILE\ikulab-motion-viewer\version_info"
-  File "..\..\..\build_release_windows\version_info\current_version.txt"  
-  File "..\..\..\build_release_windows\version_info\skip_version.txt"  
+  File "..\..\build_release_windows\version_info\current_version.txt"
+  File "..\..\build_release_windows\version_info\skip_version.txt"
 
   ; VC++ Runtime Installer
   SetOutPath "$INSTDIR"
-  File "..\..\..\dist_pyinstaller\check_vcpp_version_and_install.exe"
-  File "..\..\..\msvc_version.txt"
-  File "..\..\..\vc_redist.x64.exe"
+  File "..\..\assets\check_vcpp_version_and_install.exe"
+  File "..\..\msvc_version.txt"
+  File "..\..\vc_redist.x64.exe"
 
   ;Start Menu Shortcut
   CreateShortcut "$SMPROGRAMS\ikulab-motion-viewer.lnk" "$INSTDIR\ikulab-motion-viewer.exe" ""

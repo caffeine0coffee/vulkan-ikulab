@@ -38,9 +38,9 @@ if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
 endif ()
 
 # build ikura
-add_subdirectory(${CMAKE_SOURCE_DIR}/core/ikura)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/core/ikura)
 # build ikulab-motion-viewer
-add_subdirectory(${CMAKE_SOURCE_DIR}/app)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/app)
 # link ikura to ikulab-motion-viewer
 target_link_libraries(ikulab-motion-viewer PRIVATE ikura)
 
@@ -51,21 +51,15 @@ find_package(glm CONFIG REQUIRED)
 target_link_libraries(ikulab-motion-viewer PRIVATE tinyfiledialogs::tinyfiledialogs)
 target_link_libraries(ikulab-motion-viewer PRIVATE glm::glm)
 
-if (WIN32)
-    # add resource file
-    target_sources(ikulab-motion-viewer PRIVATE assets/windows/icon.rc)
-
-    # if FORCE_USE_CPP_MAIN is not defined
-    if ("${FORCE_USE_CPP_MAIN}" STREQUAL "ON")
-        message("Build as Windows console application")
-    else ()
-        message("Build as Windows GUI application")
-        # Set entry point to WinMain
-        set_target_properties(ikulab-motion-viewer PROPERTIES WIN32_EXECUTABLE TRUE)
-    endif ()
+if ("${FORCE_USE_CPP_MAIN}" STREQUAL "ON")
+    message("Build as console application for Windows")
+else ()
+    message("Build as GUI application for Windows")
+    # Set entry point to WinMain
+    set_target_properties(ikulab-motion-viewer PROPERTIES WIN32_EXECUTABLE TRUE)
 endif ()
 
-configure_file(${CMAKE_SOURCE_DIR}/app/buildInfo.h.in ${CMAKE_SOURCE_DIR}/app/buildInfo.h)
+configure_file(${CMAKE_SOURCE_DIR}/src/app/buildInfo.h.in ${CMAKE_SOURCE_DIR}/src/app/buildInfo.h)
 configure_file(${CMAKE_SOURCE_DIR}/assets/macos/Info.plist.in ${CMAKE_SOURCE_DIR}/assets/macos/Info.plist)
 
 # ------------------------------------------------------------

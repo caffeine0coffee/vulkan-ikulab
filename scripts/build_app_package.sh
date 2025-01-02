@@ -7,7 +7,7 @@ function green() {
 }
 
 script_dir=$(readlink -f "$(dirname "$0")")
-project_dir=$(readlink -f "${script_dir}/../..")
+project_dir=$(readlink -f "${script_dir}/..")
 
 echo "script_dir: $script_dir"
 echo "project_dir: $project_dir"

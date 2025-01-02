@@ -1,4 +1,4 @@
-set(common_include_dir ${PROJECT_SOURCE_DIR}/core)
+set(common_include_dir ${PROJECT_SOURCE_DIR}/src/core)
 
 # get all source files in app/
 file(GLOB_RECURSE imv_sources "*.cpp")

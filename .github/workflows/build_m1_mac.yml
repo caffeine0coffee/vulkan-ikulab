@@ -19,22 +19,22 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Build Version Checker
-        run: version_checker/build.sh
+        run: subprojects/version_checker/build.sh
 
       - name: Install Ninja
         run: brew install ninja
 
       - name: Cache vcpkg_installed
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ./build_release/vcpkg_installed
           key: ${{ runner.os }}-${{ runner.arch }}-vcpkg-${{ hashFiles('./vcpkg.json', './core/ikura/vcpkg.json') }}
 
       - name: Build App Bundle
-        run: utils/scripts/build_app_package.sh
+        run: ./scripts/build_app_package.sh
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ikulab-motion-viewer-m1-macos
           path: |
