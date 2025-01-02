@@ -60,7 +60,7 @@ jobs:
         run: ./scripts/build_win_package.ps1
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ikulab-motion-viewer-x64-windows
           path: |

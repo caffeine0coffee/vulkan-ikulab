@@ -34,7 +34,7 @@ jobs:
         run: ./scripts/build_app_package.sh
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ikulab-motion-viewer-m1-macos
           path: |
