@@ -16,13 +16,6 @@ BVH Motion Viewer Using [ikura](https://github.com/ikulab/ikura)
   - Modifying animation speed
 - Select BVH file by file select dialog
 
-## Future Features
-
-- Load multiple BVH files
-- Select bone by mouse click
-- Modify BVH file (i.g. split)
-- etc...
-
 ## License
 
 MIT License
