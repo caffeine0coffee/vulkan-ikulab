@@ -4,8 +4,6 @@ BVH Motion Viewer Using [ikura](https://github.com/ikulab/ikura)
 
 ![Peek 2022-10-12 15-24](https://user-images.githubusercontent.com/48763656/195266038-dc9b9f62-c2c4-45ba-8026-d746cb16a5ea.gif)
 
-Setup (ja): [Setup.md](doc/Setup.md)
-
 ## Implemented Features
 
 - Visualize BVH file
