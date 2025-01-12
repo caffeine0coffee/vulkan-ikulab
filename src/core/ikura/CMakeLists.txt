@@ -24,8 +24,8 @@ find_package(glfw3 CONFIG REQUIRED)
 pkg_check_modules(easyloggingpp easyloggingpp REQUIRED IMPORTED_TARGET)
 find_package(glslang CONFIG REQUIRED)
 
-# packages under external/ directory
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/ikura_ext_imgui)
+# packages under third_party/ directory
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third_party/ikura_ext_imgui)
 
 # ------------------------------------------------------------
 # build ikura
@@ -47,7 +47,7 @@ target_include_directories(ikura INTERFACE
         $<INSTALL_INTERFACE:${common_include_dir}>)
 
 # ------------------------------------------------------------
-# link external libraries
+# link third party libraries
 # ------------------------------------------------------------
 
 target_link_libraries(ikura PUBLIC ${CMAKE_DL_LIBS})
@@ -60,6 +60,6 @@ target_link_libraries(ikura PUBLIC glfw)
 target_link_libraries(ikura PUBLIC PkgConfig::easyloggingpp)
 target_link_libraries(ikura PUBLIC glslang::glslang glslang::glslang-default-resource-limits glslang::SPIRV glslang::SPVRemapper)
 
-# packages under external/ directory
-target_include_directories(ikura PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/external)
+# packages under third_party/ directory
+target_include_directories(ikura PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
 target_link_libraries(ikura PUBLIC ikura_ext_imgui)
