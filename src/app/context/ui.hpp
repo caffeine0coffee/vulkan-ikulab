@@ -2,7 +2,7 @@
 
 #include <array>
 
-#include <ikura/external/ikura_ext_imgui/imgui.h>
+#include <ikura/third_party/ikura_ext_imgui/imgui.h>
 
 class UI {
   public:

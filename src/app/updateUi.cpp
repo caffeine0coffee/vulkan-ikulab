@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <cmath>
 
-#include <ikura/external/ikura_ext_imgui/imgui.h>
+#include <ikura/third_party/ikura_ext_imgui/imgui.h>
 
 #include "./motionUtil/bvhExporter.hpp"
 
