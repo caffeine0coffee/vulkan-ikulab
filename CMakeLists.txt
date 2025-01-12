@@ -44,7 +44,7 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src/app)
 # link ikura to ikulab-motion-viewer
 target_link_libraries(ikulab-motion-viewer PRIVATE ikura)
 
-# find / link external libraries
+# find / link third party libraries
 # libraries are installed via vcpkg
 find_package(tinyfiledialogs CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
