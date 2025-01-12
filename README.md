@@ -22,44 +22,19 @@ MIT License
 
 ## External Dependencies
 
-This software uses the following external libraries:
+ikulab-motion-viewer uses the following libraries:
 
-- Vulkan Loader
-  - Khronos Group
-  - Apache License Version 2.0
-    - https://github.com/KhronosGroup/Vulkan-Loader/blob/master/LICENSE.txt
+- Vulkan SDK v1.3.280
+- Vulkan-Loader - Apache License 2.0
+- Vulkan-Headers - MIT License
+- Vulkan-ValidationLayers - Apache License Version 2.0
+- VulkanMemoryAllocator - MIT License
+- GLFW - zlib/libpng License
+- Dear ImGui - MIT License
+- GLM - The Happy Bunny License (Modified MIT License)
+- tiny file dialogs - zlib/libpng License
+- easyloggingpp - MIT License
+- FreeType Project - FTL LICENSE
+- glslang - Apache License 2.0, BSD-3-Clause License, MIT License, GPL 3 License with special bison exception
 
-- Vulkan-ValidationLayers
-  - Khronos Group
-  - Apache License Version 2.0
-    - https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/master/LICENSE.txt
-
-- VulkanMemoryAllocator
-  - Copyright (c) 2017-2022 Advanced Micro Devices, Inc.
-  - MIT License
-    - https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator/blob/master/LICENSE.txt
-
-- GLFW
-  - Copyright (c) 2002-2006 Marcus Geelnard
-  - Copyright (c) 2006-2019 Camilla Löwy
-  - zlib/libpng License
-    - https://www.glfw.org/license.html
-
-- GLM
-  - Copyright (c) 2005 - G-Truc Creation
-  - The Happy Bunny License (Modified MIT License)
-    - https://github.com/g-truc/glm/blob/master/manual.md#section0
-
-- Dear ImGui
-  - Copyright (c) 2014-2022 Omar Cornut
-  - MIT License
-    - https://github.com/ocornut/imgui/blob/master/LICENSE.txt
-
-- Shaderc
-  - Google
-  - Apache License Version 2.0 
-    - https://github.com/google/shaderc/blob/main/LICENSE
-
-- tiny file dialogs
-  - zlib/libpng License
-  - https://sourceforge.net/projects/tinyfiledialogs
+See [THIRD_PARTY_NOTICE.txt](THIRD_PARTY_NOTICE.txt) for information on third-party library licenses.
