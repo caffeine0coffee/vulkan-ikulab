@@ -20,6 +20,8 @@ BVH Motion Viewer Using [ikura](https://github.com/ikulab/ikura)
 
 MIT License
 
+See [LICENSE.txt](LICENSE.txt) for details.
+
 ## External Dependencies
 
 ikulab-motion-viewer uses the following libraries:
