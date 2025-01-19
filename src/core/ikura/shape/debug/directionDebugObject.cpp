@@ -1,6 +1,6 @@
 #include <vector>
 
-#include "./directionDebugObject.hpp"
+#include "directionDebugObject.hpp"
 
 namespace ikura {
 namespace shapes {

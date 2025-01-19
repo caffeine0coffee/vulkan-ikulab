@@ -1,4 +1,4 @@
-#include "./separatedColorCube.hpp"
+#include "separatedColorCube.hpp"
 
 namespace ikura {
 namespace shapes {

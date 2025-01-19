@@ -1,4 +1,4 @@
-#include "./renderEngine.hpp"
+#include "renderEngine.hpp"
 
 #include <map>
 #include <vector>

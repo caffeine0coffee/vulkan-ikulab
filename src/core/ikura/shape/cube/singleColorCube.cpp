@@ -3,7 +3,7 @@
 
 #include <glm/glm.hpp>
 
-#include "./singleColorCube.hpp"
+#include "singleColorCube.hpp"
 
 namespace ikura {
 namespace shapes {

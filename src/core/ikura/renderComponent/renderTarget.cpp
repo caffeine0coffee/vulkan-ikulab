@@ -1,4 +1,4 @@
-#include "./renderTarget.hpp"
+#include "renderTarget.hpp"
 
 #include <array>
 

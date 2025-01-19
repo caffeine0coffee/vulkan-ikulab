@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-#include "./sphere.hpp"
+#include "sphere.hpp"
 
 namespace ikura {
 namespace shapes {

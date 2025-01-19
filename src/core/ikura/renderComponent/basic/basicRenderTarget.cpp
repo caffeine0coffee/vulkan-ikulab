@@ -1,4 +1,4 @@
-#include "./basicRenderTarget.hpp"
+#include "basicRenderTarget.hpp"
 
 #include <easylogging++.h>
 

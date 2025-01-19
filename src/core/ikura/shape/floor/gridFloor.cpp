@@ -1,4 +1,4 @@
-#include "./gridFloor.hpp"
+#include "gridFloor.hpp"
 
 namespace ikura {
 namespace shapes {

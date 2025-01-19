@@ -1,8 +1,8 @@
-#include "./basicRenderComponentProvider.hpp"
+#include "basicRenderComponentProvider.hpp"
 
 #include <easylogging++.h>
 
-#include "./descriptorSetProps.hpp"
+#include "descriptorSetProps.hpp"
 
 #include "../../common/logLevels.hpp"
 

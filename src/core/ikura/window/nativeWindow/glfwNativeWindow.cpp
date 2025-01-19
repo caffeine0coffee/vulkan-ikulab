@@ -1,4 +1,4 @@
-#include "./glfwNativeWindow.hpp"
+#include "glfwNativeWindow.hpp"
 
 #include <easylogging++.h>
 

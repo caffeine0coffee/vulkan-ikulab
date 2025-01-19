@@ -6,7 +6,7 @@
 
 #include <GLFW/glfw3.h>
 
-#include "./nativeWindow.hpp"
+#include "nativeWindow.hpp"
 
 namespace ikura {
 class GlfwNativeWindow : public NativeWindow {

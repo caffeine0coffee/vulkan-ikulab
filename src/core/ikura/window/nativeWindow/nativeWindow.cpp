@@ -1,4 +1,4 @@
-#include "./nativeWindow.hpp"
+#include "nativeWindow.hpp"
 
 #include <easylogging++.h>
 #include <vulkan/vulkan.hpp>

@@ -1,6 +1,6 @@
 #include <algorithm>
 
-#include "./shape.hpp"
+#include "shape.hpp"
 
 namespace ikura {
 namespace shapes {

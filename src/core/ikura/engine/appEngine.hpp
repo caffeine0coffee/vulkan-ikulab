@@ -9,7 +9,7 @@
 
 #include "../window/nativeWindow/glfwNativeWindow.hpp"
 #include "../window/virtualWindow/imGuiVirtualWindow.hpp"
-#include "./renderEngine/renderEngine.hpp"
+#include "renderEngine/renderEngine.hpp"
 
 namespace ikura {
 class AppEngine {

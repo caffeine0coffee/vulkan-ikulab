@@ -1,4 +1,4 @@
-#include "./appEngine.hpp"
+#include "appEngine.hpp"
 
 #include <algorithm>
 #include <iostream>

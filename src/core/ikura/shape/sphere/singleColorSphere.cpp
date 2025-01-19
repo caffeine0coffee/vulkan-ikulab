@@ -1,4 +1,4 @@
-#include "./singleColorSphere.hpp"
+#include "singleColorSphere.hpp"
 
 #include <cmath>
 

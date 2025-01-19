@@ -1,4 +1,4 @@
-#include "./renderContent.hpp"
+#include "renderContent.hpp"
 
 #include <vulkan/vulkan.hpp>
 

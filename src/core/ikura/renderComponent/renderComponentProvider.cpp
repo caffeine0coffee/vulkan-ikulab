@@ -1,4 +1,4 @@
-#include "./renderComponentProvider.hpp"
+#include "renderComponentProvider.hpp"
 
 #include <easylogging++.h>
 
