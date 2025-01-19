@@ -157,7 +157,7 @@ add_custom_target(write_version_info
 )
 
 add_custom_target(write_version_info_for_develop
-    COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_SOURCE_DIR}/assets-for-dev/version_info
-    COMMAND ${CMAKE_COMMAND} -E echo "v${PROJECT_VERSION}" > ${PROJECT_SOURCE_DIR}/assets-for-dev/version_info/current_version.txt
-    COMMAND ${CMAKE_COMMAND} -E echo "v${PROJECT_VERSION}" > ${PROJECT_SOURCE_DIR}/assets-for-dev/version_info/skip_version.txt
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${RESOURCE_DIR}/version_info
+    COMMAND ${CMAKE_COMMAND} -E echo "v${PROJECT_VERSION}" > ${RESOURCE_DIR}/version_info/current_version.txt
+    COMMAND ${CMAKE_COMMAND} -E echo "v${PROJECT_VERSION}" > ${RESOURCE_DIR}/version_info/skip_version.txt
 )

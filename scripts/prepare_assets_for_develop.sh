@@ -2,12 +2,13 @@
 
 script_dir=$(dirname "$0")
 project_dir=$(realpath "$script_dir/..")
-
 cd "$project_dir" || exit
-mkdir -p "$project_dir/assets-for-dev"
+
+resource_dir_for_dev="$(cmake --preset=build_develop -N | grep RESOURCE_DIR | sed -n 's/.*"\(.*\)".*/\1/p')"
+mkdir -p "$resource_dir_for_dev"
 
 # copy fonts
-cp -r "$project_dir/assets/fonts" "$project_dir/assets-for-dev"
+cp -r "$project_dir/assets/fonts" "$resource_dir_for_dev/fonts"
 
 # generate version info file
 cmake --preset=build_develop
