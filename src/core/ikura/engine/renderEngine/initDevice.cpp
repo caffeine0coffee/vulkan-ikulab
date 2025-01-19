@@ -3,9 +3,8 @@
 #include <map>
 #include <vector>
 
-#include <GLFW/glfw3.h>
-
 #include <easylogging++.h>
+#include <GLFW/glfw3.h>
 #include <vk_mem_alloc.h>
 
 #include "common/logLevels.hpp"

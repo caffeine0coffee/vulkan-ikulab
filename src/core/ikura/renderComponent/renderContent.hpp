@@ -1,8 +1,7 @@
 #pragma once
 
-#include <vulkan/vulkan.hpp>
-
 #include <glm/glm.hpp>
+#include <vulkan/vulkan.hpp>
 
 #include "common/renderPrimitiveTypes.hpp"
 #include "common/uniformBufferInfo.hpp"

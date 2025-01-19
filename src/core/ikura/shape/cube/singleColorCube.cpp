@@ -1,9 +1,9 @@
+#include "singleColorCube.hpp"
+
 #include <algorithm>
 #include <array>
 
 #include <glm/glm.hpp>
-
-#include "singleColorCube.hpp"
 
 namespace ikura {
 namespace shapes {

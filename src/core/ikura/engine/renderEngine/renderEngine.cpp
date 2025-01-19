@@ -1,11 +1,6 @@
 #include "renderEngine.hpp"
 
-#include <GLFW/glfw3.h>
-
-#include <easylogging++.h>
-
-#include "common/logLevels.hpp"
-
+// TODO(caffeine): maybe unnecessary, determine later
 #define VMA_IMPLEMENTATION
 // for compability
 #ifndef VK_API_VERSION_MAJOR
@@ -17,7 +12,12 @@
 #ifndef VK_API_VERSION_PATCH
 #define VK_API_VERSION_PATCH(version) ((uint32_t)(version)&0xFFFU)
 #endif
+
+#include <easylogging++.h>
+#include <GLFW/glfw3.h>
 #include <vk_mem_alloc.h>
+
+#include "common/logLevels.hpp"
 
 namespace ikura {
 QueueFamilyIndices::QueueFamilyIndices() {

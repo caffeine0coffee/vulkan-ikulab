@@ -2,9 +2,8 @@
 
 #include <easylogging++.h>
 
-#include "window/virtualWindow/virtualWindow.hpp"
-
 #include "common/logLevels.hpp"
+#include "window/virtualWindow/virtualWindow.hpp"
 
 #if defined(IS_WINDOWS)
 #include <climits>

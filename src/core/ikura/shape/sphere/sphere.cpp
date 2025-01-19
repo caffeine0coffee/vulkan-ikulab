@@ -1,9 +1,9 @@
+#include "sphere.hpp"
+
 #include <algorithm>
 #include <cmath>
 #include <iostream>
 #include <vector>
-
-#include "sphere.hpp"
 
 namespace ikura {
 namespace shapes {

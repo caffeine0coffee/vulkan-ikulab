@@ -4,8 +4,8 @@
 #include <memory>
 #include <vector>
 
-#include "shape/cube/singleColorCube.hpp"
 #include "bone.hpp"
+#include "shape/cube/singleColorCube.hpp"
 
 namespace ikura {
 namespace shapes {

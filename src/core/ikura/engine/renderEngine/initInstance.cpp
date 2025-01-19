@@ -1,9 +1,8 @@
 #include "renderEngine.hpp"
 
+#include <easylogging++.h>
 #include <GLFW/glfw3.h>
 #include <vulkan/vulkan.hpp>
-
-#include <easylogging++.h>
 
 #include "common/logLevels.hpp"
 

@@ -1,9 +1,10 @@
+#include "bone.hpp"
+
 #include <cmath>
 #include <glm/glm.hpp>
 #include <vector>
 
 #include "shape/sphere/sphere.hpp"
-#include "bone.hpp"
 
 namespace ikura {
 namespace shapes {
