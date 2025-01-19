@@ -7,7 +7,7 @@
 /build_release
 /build_release_windows
 
-/assets-for-dev
+/assets_for_dev
 
 vcpkg_installed
 
