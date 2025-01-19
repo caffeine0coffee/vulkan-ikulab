@@ -3,7 +3,7 @@
 #include <array>
 #include <memory>
 
-#include "../cube/singleColorCube.hpp"
+#include "shape/cube/singleColorCube.hpp"
 #include "debugObject.hpp"
 
 // TODO: make another abstract class as parent

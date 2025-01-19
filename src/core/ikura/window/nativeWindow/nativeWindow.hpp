@@ -5,8 +5,8 @@
 
 #include <vulkan/vulkan.hpp>
 
-#include "../../engine/renderEngine/renderEngine.hpp"
-#include "../window.hpp"
+#include "engine/renderEngine/renderEngine.hpp"
+#include "window/window.hpp"
 
 namespace ikura {
 class VirtualWindow;

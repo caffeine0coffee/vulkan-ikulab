@@ -5,7 +5,7 @@
 #include <glm/glm.hpp>
 #include <vulkan/vulkan.h>
 
-#include "../shape.hpp"
+#include "shape/shape.hpp"
 
 namespace ikura {
 namespace shapes {

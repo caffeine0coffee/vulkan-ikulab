@@ -4,9 +4,9 @@
 
 #include <glm/glm.hpp>
 
-#include "../common/renderPrimitiveTypes.hpp"
-#include "../common/uniformBufferInfo.hpp"
-#include "../engine/renderEngine/renderEngine.hpp"
+#include "common/renderPrimitiveTypes.hpp"
+#include "common/uniformBufferInfo.hpp"
+#include "engine/renderEngine/renderEngine.hpp"
 #include "renderComponentProvider.hpp"
 
 namespace ikura {

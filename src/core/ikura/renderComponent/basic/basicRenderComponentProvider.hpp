@@ -4,9 +4,9 @@
 
 #include <vulkan/vulkan.hpp>
 
-#include "../../engine/renderEngine/renderEngine.hpp"
-#include "../../window/nativeWindow/nativeWindow.hpp"
-#include "../renderComponentProvider.hpp"
+#include "engine/renderEngine/renderEngine.hpp"
+#include "window/nativeWindow/nativeWindow.hpp"
+#include "renderComponent/renderComponentProvider.hpp"
 #include "basicRenderContent.hpp"
 #include "basicRenderTarget.hpp"
 

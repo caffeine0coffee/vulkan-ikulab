@@ -7,8 +7,8 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
-#include "../window/nativeWindow/glfwNativeWindow.hpp"
-#include "../window/virtualWindow/imGuiVirtualWindow.hpp"
+#include "window/nativeWindow/glfwNativeWindow.hpp"
+#include "window/virtualWindow/imGuiVirtualWindow.hpp"
 #include "renderEngine/renderEngine.hpp"
 
 namespace ikura {

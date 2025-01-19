@@ -11,7 +11,7 @@
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "../shape/shapes.hpp"
+#include "shape/shapes.hpp"
 
 namespace ikura {
 AppEngine::AppEngine(std::shared_ptr<RenderEngine> renderEngine) {

@@ -6,10 +6,10 @@
 #include <vk_mem_alloc.h>
 #include <vulkan/vulkan.hpp>
 
-#include "../window/nativeWindow/nativeWindow.hpp"
+#include "window/nativeWindow/nativeWindow.hpp"
 
-#include "../common/logLevels.hpp"
-#include "../misc/shaderCodes.hpp"
+#include "common/logLevels.hpp"
+#include "misc/shaderCodes.hpp"
 
 #include <tinyfiledialogs/tinyfiledialogs.h>
 

@@ -2,7 +2,7 @@
 
 #include <easylogging++.h>
 
-#include "../common/logLevels.hpp"
+#include "common/logLevels.hpp"
 
 namespace ikura {
 RenderComponentProvider::RenderComponentProvider(

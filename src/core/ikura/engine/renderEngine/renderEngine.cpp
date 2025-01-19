@@ -4,7 +4,7 @@
 
 #include <easylogging++.h>
 
-#include "../../common/logLevels.hpp"
+#include "common/logLevels.hpp"
 
 #define VMA_IMPLEMENTATION
 // for compability

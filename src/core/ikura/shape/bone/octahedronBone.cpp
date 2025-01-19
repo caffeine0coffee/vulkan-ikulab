@@ -1,5 +1,5 @@
 #include "octahedronBone.hpp"
-#include "../sphere/singleColorSphere.hpp"
+#include "shape/sphere/singleColorSphere.hpp"
 
 namespace ikura {
 namespace shapes {

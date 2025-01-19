@@ -13,7 +13,7 @@
 
 #include <vk_mem_alloc.h>
 
-#include "../../misc/initVulkanHppDispatchLoader.hpp"
+#include "misc/initVulkanHppDispatchLoader.hpp"
 
 #define VALIDATION_LAYER_NAME "VK_LAYER_KHRONOS_validation"
 #define IKURA_APP_INFO_ENGINE_NAME "Ikura"

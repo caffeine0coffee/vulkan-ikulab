@@ -2,7 +2,7 @@
 #include <glm/glm.hpp>
 #include <vector>
 
-#include "../sphere/sphere.hpp"
+#include "shape/sphere/sphere.hpp"
 #include "bone.hpp"
 
 namespace ikura {

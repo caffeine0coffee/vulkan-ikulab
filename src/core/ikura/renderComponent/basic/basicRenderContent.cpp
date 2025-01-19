@@ -2,11 +2,11 @@
 
 #include <easylogging++.h>
 
-#include "../../shape/shapes.hpp"
-#include "../../window/window.hpp"
+#include "shape/shapes.hpp"
+#include "window/window.hpp"
 #include "descriptorSetProps.hpp"
 
-#include "../../common/logLevels.hpp"
+#include "common/logLevels.hpp"
 
 // for demo
 #define GLM_FORCE_RADIANS

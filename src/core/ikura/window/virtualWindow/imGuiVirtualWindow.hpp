@@ -2,7 +2,7 @@
 
 #include <ikura_ext_imgui/imgui.h>
 
-#include "../nativeWindow/glfwNativeWindow.hpp"
+#include "window/nativeWindow/glfwNativeWindow.hpp"
 #include "virtualWindow.hpp"
 
 namespace ikura {

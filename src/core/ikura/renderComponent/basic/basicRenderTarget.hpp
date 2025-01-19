@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../renderTarget.hpp"
+#include "renderComponent/renderTarget.hpp"
 
 namespace ikura {
 class BasicRenderTarget : public RenderTarget {

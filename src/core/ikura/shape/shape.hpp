@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-#include "../common/renderPrimitiveTypes.hpp"
+#include "common/renderPrimitiveTypes.hpp"
 
 namespace ikura {
 namespace shapes {
