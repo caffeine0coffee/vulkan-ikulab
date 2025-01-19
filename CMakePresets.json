@@ -16,7 +16,7 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "RESOURCE_DIR": "${sourceDir}/assets-for-dev",
+        "RESOURCE_DIR": "${sourceDir}/assets_for_dev",
         "FORCE_USE_CPP_MAIN": "ON"
       }
     },
