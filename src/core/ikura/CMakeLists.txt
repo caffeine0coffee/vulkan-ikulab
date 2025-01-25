@@ -41,9 +41,7 @@ target_compile_definitions(ikura PRIVATE VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1)
 target_compile_definitions(ikura PRIVATE VMA_STATIC_VULKAN_FUNCTIONS=0 VMA_DYNAMIC_VULKAN_FUNCTIONS=1)
 
 # set include directory for applications using ikura
-target_include_directories(ikura INTERFACE ${PROJECT_SOURCE_DIR})
-
-target_include_directories(ikura PRIVATE ${PROJECT_SOURCE_DIR})
+target_include_directories(ikura PUBLIC ${PROJECT_SOURCE_DIR})
 
 # ------------------------------------------------------------
 # link third party libraries
