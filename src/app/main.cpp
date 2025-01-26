@@ -6,9 +6,9 @@
 
 #include <easylogging++.h>
 
-#include "./resourceDirectory.hpp"
-#include "./versionChecker.hpp"
-#include "./util/errorUtils.hpp"
+#include "resourceDirectory.hpp"
+#include "versionChecker.hpp"
+#include "util/errorUtils.hpp"
 
 INITIALIZE_EASYLOGGINGPP
 

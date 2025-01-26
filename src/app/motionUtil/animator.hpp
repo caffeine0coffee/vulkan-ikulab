@@ -12,7 +12,7 @@
 #include <ikura/ikura.hpp>
 
 #include "../context/ui.hpp"
-#include "./common.hpp"
+#include "common.hpp"
 
 #define MAX_ANIMATION_SPEED 10.0f
 #define MIN_ANIMATION_SPEED (1.0f / 128.0f)
