@@ -1,14 +1,11 @@
 #pragma once
 
 #include <array>
-#include <memory>
 #include <set>
-#include <stdexcept>
 #include <string>
 #include <vector>
 
 #include <glm/glm.hpp>
-
 #include <ikura/ikura.hpp>
 
 enum ChannelEnum {

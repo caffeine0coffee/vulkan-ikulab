@@ -7,8 +7,8 @@
 #include <easylogging++.h>
 
 #include "resourceDirectory.hpp"
-#include "versionChecker.hpp"
 #include "util/errorUtils.hpp"
+#include "versionChecker.hpp"
 
 INITIALIZE_EASYLOGGINGPP
 
