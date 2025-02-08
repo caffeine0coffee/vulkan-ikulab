@@ -24,4 +24,4 @@ fi
 
 run_clang_tidy_bin="$1"
 
-"${run_clang_tidy_bin}" -p build_develop -use-color
+"${run_clang_tidy_bin}" -p build_develop -use-color -header-filter=.*
