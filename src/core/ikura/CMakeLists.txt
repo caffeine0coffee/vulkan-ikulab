@@ -39,6 +39,8 @@ add_library(ikura STATIC ${ikura_sources})
 # set compile options for ikura
 target_compile_definitions(ikura PRIVATE VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1)
 target_compile_definitions(ikura PRIVATE VMA_STATIC_VULKAN_FUNCTIONS=0 VMA_DYNAMIC_VULKAN_FUNCTIONS=1)
+target_compile_definitions(ikura PRIVATE GLFW_INCLUDE_VULKAN)
+target_compile_definitions(ikura PRIVATE GLM_FORCE_DEPTH_ZERO_TO_ONE GLM_FORCE_RADIANS)
 
 # set include directory for applications using ikura
 target_include_directories(ikura PUBLIC ${PROJECT_SOURCE_DIR})

@@ -66,6 +66,9 @@ configure_file(${CMAKE_SOURCE_DIR}/assets/macos/Info.plist.in ${CMAKE_SOURCE_DIR
 # config ikulab-motion-viewer 
 # ------------------------------------------------------------
 
+target_compile_definitions(ikulab-motion-viewer PRIVATE GLFW_INCLUDE_VULKAN)
+target_compile_definitions(ikulab-motion-viewer PRIVATE GLM_FORCE_DEPTH_ZERO_TO_ONE GLM_FORCE_RADIANS)
+
 # override application resource director
 if (DEFINED RESOURCE_DIR)
     target_compile_definitions(ikulab-motion-viewer PRIVATE RESOURCE_DIR="${RESOURCE_DIR}")
