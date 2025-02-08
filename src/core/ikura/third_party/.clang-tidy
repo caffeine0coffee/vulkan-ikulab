@@ -1,1 +1,5 @@
-Checks: '-*'
+# dummy check
+Checks: '-*,misc-definitions-in-headers'
+CheckOptions:
+  - key: misc-definitions-in-headers.HeaderFileExtensions
+    value: 'x'
