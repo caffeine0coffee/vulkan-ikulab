@@ -7,8 +7,8 @@
 
 #include <vulkan/vulkan.hpp>
 
-#include "../engine/renderEngine/renderEngine.hpp"
-#include "./renderComponentProvider.hpp"
+#include "engine/renderEngine/renderEngine.hpp"
+#include "renderComponentProvider.hpp"
 
 namespace ikura {
 class ImageResource {

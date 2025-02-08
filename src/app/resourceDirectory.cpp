@@ -1,4 +1,4 @@
-#include "./resourceDirectory.hpp"
+#include "resourceDirectory.hpp"
 
 #ifdef __APPLE__
 #include <CoreFoundation/CoreFoundation.h>
@@ -8,7 +8,7 @@
 #include <shlobj.h>
 #endif
 
-#include "./util/errorUtils.hpp"
+#include "util/errorUtils.hpp"
 
 // ------------------------------------------------------------
 // getReadOnlyResourceDirectory

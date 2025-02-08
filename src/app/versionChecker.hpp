@@ -6,7 +6,7 @@
 
 #include <easylogging++.h>
 
-#include "./resourceDirectory.hpp"
+#include "resourceDirectory.hpp"
 
 #ifdef IS_WINDOWS
 #include <windows.h>

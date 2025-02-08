@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 
-#include "../shape.hpp"
+#include "shape/shape.hpp"
 
 namespace ikura {
 namespace shapes {

@@ -1,4 +1,4 @@
-#include "./common.hpp"
+#include "common.hpp"
 
 ChannelEnum convertStrToChannelEnum(std::string str) {
     if (str == "Xposition")

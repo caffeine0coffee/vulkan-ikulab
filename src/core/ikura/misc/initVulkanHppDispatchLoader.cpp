@@ -1,4 +1,4 @@
-#include "./initVulkanHppDispatchLoader.hpp"
+#include "initVulkanHppDispatchLoader.hpp"
 
 #include <memory>
 

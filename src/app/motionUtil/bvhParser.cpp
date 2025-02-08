@@ -1,4 +1,4 @@
-#include "./bvhParser.hpp"
+#include "bvhParser.hpp"
 
 #include <algorithm>
 #include <fstream>

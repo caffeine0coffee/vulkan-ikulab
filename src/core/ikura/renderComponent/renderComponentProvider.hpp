@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../engine/renderEngine/renderEngine.hpp"
+#include "engine/renderEngine/renderEngine.hpp"
 
 namespace ikura {
 class RenderComponentProvider

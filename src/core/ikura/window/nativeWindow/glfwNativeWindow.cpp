@@ -1,10 +1,9 @@
-#include "./glfwNativeWindow.hpp"
+#include "glfwNativeWindow.hpp"
 
 #include <easylogging++.h>
 
-#include "../virtualWindow/virtualWindow.hpp"
-
-#include "../../common/logLevels.hpp"
+#include "common/logLevels.hpp"
+#include "window/virtualWindow/virtualWindow.hpp"
 
 #if defined(IS_WINDOWS)
 #include <climits>

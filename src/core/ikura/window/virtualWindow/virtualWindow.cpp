@@ -1,4 +1,4 @@
-#include "./virtualWindow.hpp"
+#include "virtualWindow.hpp"
 
 #include <vulkan/vulkan.hpp>
 

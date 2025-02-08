@@ -1,4 +1,4 @@
-#include "./imGuiVirtualWindow.hpp"
+#include "imGuiVirtualWindow.hpp"
 
 #include <filesystem>
 

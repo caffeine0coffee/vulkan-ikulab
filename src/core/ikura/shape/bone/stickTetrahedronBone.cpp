@@ -1,11 +1,12 @@
+#include "stickTetrahedronBone.hpp"
+
 #include <algorithm>
 #include <cmath>
 #include <memory>
 
 #include <glm/glm.hpp>
 
-#include "../cube/singleColorCube.hpp"
-#include "./stickTetrahedronBone.hpp"
+#include "shape/cube/singleColorCube.hpp"
 
 namespace ikura {
 namespace shapes {

@@ -1,17 +1,17 @@
-#include "./appEngine.hpp"
+#include "appEngine.hpp"
 
 #include <algorithm>
 #include <iostream>
 #include <thread>
 
-#include <vulkan/vulkan.hpp>
-
-#include <GLFW/glfw3.h>
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
-#include <glm/gtc/matrix_transform.hpp>
 
-#include "../shape/shapes.hpp"
+#include <GLFW/glfw3.h>
+#include <glm/gtc/matrix_transform.hpp>
+#include <vulkan/vulkan.hpp>
+
+#include "shape/shapes.hpp"
 
 namespace ikura {
 AppEngine::AppEngine(std::shared_ptr<RenderEngine> renderEngine) {

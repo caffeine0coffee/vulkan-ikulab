@@ -2,8 +2,8 @@
 
 #include <memory>
 
-#include "../nativeWindow/nativeWindow.hpp"
-#include "../window.hpp"
+#include "window/nativeWindow/nativeWindow.hpp"
+#include "window/window.hpp"
 
 namespace ikura {
 class VirtualWindow : public Window {

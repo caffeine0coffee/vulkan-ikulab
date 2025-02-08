@@ -1,10 +1,10 @@
-#include "./renderEngine.hpp"
+#include "renderEngine.hpp"
 
 #include <vulkan/vulkan.hpp>
 
 #include <easylogging++.h>
 
-#include "../../common/logLevels.hpp"
+#include "common/logLevels.hpp"
 
 namespace ikura {
 /**

@@ -1,4 +1,4 @@
-#include "./filledFloor.hpp"
+#include "filledFloor.hpp"
 
 namespace ikura {
 namespace shapes {

@@ -1,4 +1,4 @@
-#include "./camera.hpp"
+#include "camera.hpp"
 
 void Camera::init() {
     center = {0.0, 0.0, 5.0};

@@ -1,4 +1,4 @@
-#include "./app.hpp"
+#include "app.hpp"
 
 void App::cursorPositionCallback(GLFWwindow *window, double xPos, double yPos) {
     App *app = static_cast<App *>(glfwGetWindowUserPointer(window));

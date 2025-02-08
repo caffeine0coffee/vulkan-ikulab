@@ -1,11 +1,11 @@
-﻿#include "./app.hpp"
+﻿#include "app.hpp"
 
 #include <algorithm>
 #include <cmath>
 
 #include <ikura/third_party/ikura_ext_imgui/imgui.h>
 
-#include "./motionUtil/bvhExporter.hpp"
+#include "motionUtil/bvhExporter.hpp"
 
 namespace {
 // コントロールボタンの1単位サイズ

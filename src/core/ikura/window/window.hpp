@@ -5,8 +5,8 @@
 
 #include <vulkan/vulkan.hpp>
 
-#include "../renderComponent/renderContent.hpp"
-#include "../renderComponent/renderTarget.hpp"
+#include "renderComponent/renderContent.hpp"
+#include "renderComponent/renderTarget.hpp"
 
 namespace ikura {
 class Window {

@@ -1,11 +1,11 @@
-#include "./basicRenderTarget.hpp"
+#include "basicRenderTarget.hpp"
 
 #include <easylogging++.h>
 
-#include "../../common/logLevels.hpp"
-#include "../../common/renderPrimitiveTypes.hpp"
-#include "../../misc/shaderCodes.hpp"
-#include "../../util/shaderUtils.hpp"
+#include "common/logLevels.hpp"
+#include "common/renderPrimitiveTypes.hpp"
+#include "misc/shaderCodes.hpp"
+#include "util/shaderUtils.hpp"
 
 namespace ikura {
 void BasicRenderTarget::setupRenderPass() {

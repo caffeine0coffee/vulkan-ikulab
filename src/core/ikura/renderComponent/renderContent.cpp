@@ -1,11 +1,10 @@
-#include "./renderContent.hpp"
-
-#include <vulkan/vulkan.hpp>
+#include "renderContent.hpp"
 
 #include <easylogging++.h>
+#include <vulkan/vulkan.hpp>
 
-#include "../window/nativeWindow/nativeWindow.hpp"
-#include "../common/logLevels.hpp"
+#include "common/logLevels.hpp"
+#include "window/nativeWindow/nativeWindow.hpp"
 
 namespace ikura {
 void BufferResource::release(VmaAllocator allocator) {

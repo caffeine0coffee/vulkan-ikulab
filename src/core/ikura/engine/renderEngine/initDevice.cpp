@@ -1,14 +1,13 @@
-#include "./renderEngine.hpp"
+#include "renderEngine.hpp"
 
 #include <map>
 #include <vector>
 
-#include <GLFW/glfw3.h>
-
 #include <easylogging++.h>
+#include <GLFW/glfw3.h>
 #include <vk_mem_alloc.h>
 
-#include "../../common/logLevels.hpp"
+#include "common/logLevels.hpp"
 
 namespace ikura {
 struct PhysicalDeviceEvaluation {

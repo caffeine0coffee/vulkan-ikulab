@@ -1,17 +1,15 @@
-#include "./renderTarget.hpp"
+#include "renderTarget.hpp"
 
 #include <array>
 
 #include <easylogging++.h>
+#include <tinyfiledialogs/tinyfiledialogs.h>
 #include <vk_mem_alloc.h>
 #include <vulkan/vulkan.hpp>
 
-#include "../window/nativeWindow/nativeWindow.hpp"
-
-#include "../common/logLevels.hpp"
-#include "../misc/shaderCodes.hpp"
-
-#include <tinyfiledialogs/tinyfiledialogs.h>
+#include "common/logLevels.hpp"
+#include "misc/shaderCodes.hpp"
+#include "window/nativeWindow/nativeWindow.hpp"
 
 namespace ikura {
 void ImageResource::release(vk::Device device, VmaAllocator allocator) {

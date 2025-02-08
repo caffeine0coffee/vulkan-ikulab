@@ -1,6 +1,6 @@
 #pragma once
 
-#include "./bone.hpp"
+#include "bone.hpp"
 
 namespace ikura {
 namespace shapes {
