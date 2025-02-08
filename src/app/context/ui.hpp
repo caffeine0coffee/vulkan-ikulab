@@ -2,8 +2,6 @@
 
 #include <array>
 
-#include <ikura/third_party/ikura_ext_imgui/imgui.h>
-
 class UI {
   public:
     static void makePadding(int pad);

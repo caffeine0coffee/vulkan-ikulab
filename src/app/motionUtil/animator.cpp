@@ -1,11 +1,12 @@
+#include "animator.hpp"
+
 #include <algorithm>
-#include <cmath>
 #include <iostream>
 
 #define GLM_FORCE_RADIANS
+
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "animator.hpp"
 #include "bvhParser.hpp"
 
 // ----------------------------------------

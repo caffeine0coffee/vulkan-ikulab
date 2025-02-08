@@ -4,6 +4,8 @@
 
 #include "errorUtils.hpp"
 
+#include "popupUtils.hpp"
+
 void notifyErrorAndExit(const std::string &message) {
     showErrorPopup(message);
     

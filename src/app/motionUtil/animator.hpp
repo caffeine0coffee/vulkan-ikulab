@@ -3,12 +3,10 @@
 #include <array>
 #include <cstdint>
 #include <fstream>
-#include <memory>
 #include <string>
 #include <vector>
 
 #include <glm/glm.hpp>
-
 #include <ikura/ikura.hpp>
 
 #include "common.hpp"

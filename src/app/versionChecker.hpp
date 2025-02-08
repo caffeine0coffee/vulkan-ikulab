@@ -4,10 +4,6 @@
 
 #pragma once
 
-#include <easylogging++.h>
-
-#include "resourceDirectory.hpp"
-
 #ifdef IS_WINDOWS
 #include <windows.h>
 #endif
@@ -15,6 +11,10 @@
 #ifdef __APPLE__
 #include <unistd.h>
 #endif
+
+#include <easylogging++.h>
+
+#include "resourceDirectory.hpp"
 
 #ifdef IS_WINDOWS
 

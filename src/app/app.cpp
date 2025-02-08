@@ -4,19 +4,17 @@
 #include <iostream>
 
 #define GLFW_INCLUDE_VULKAN
-#include <GLFW/glfw3.h>
-
-#define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
-#include <glm/gtc/matrix_transform.hpp>
+#define GLM_FORCE_RADIANS
 
+#include <GLFW/glfw3.h>
+#include <glm/gtc/matrix_transform.hpp>
 #include <tinyfiledialogs.h>
 
+#include "buildInfo.h"
 #include "motionUtil/bvhExporter.hpp"
 #include "resourceDirectory.hpp"
-#include "util/popupUtils.hpp"
 #include "util/errorUtils.hpp"
-#include "buildInfo.h"
 
 void App::initIkura() {
     // Initialize Ikura
