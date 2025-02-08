@@ -62,3 +62,10 @@ static void spawnVersionCheckerProcess() {
 }
 
 #endif
+
+#ifdef __linux__
+
+// TODO: implement version checker for Linux
+static void spawnVersionCheckerProcess() {}
+
+#endif
