@@ -1,4 +1,4 @@
-#include "./mouse.hpp"
+#include "mouse.hpp"
 
 void Mouse::reset() {
     scrollOffsetX = 0;

@@ -1,4 +1,4 @@
-#include "./floor.hpp"
+#include "floor.hpp"
 
 namespace ikura {
 namespace shapes {

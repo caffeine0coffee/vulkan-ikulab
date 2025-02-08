@@ -1,4 +1,4 @@
-#include "./app.hpp"
+#include "app.hpp"
 
 #include <algorithm>
 #include <iostream>
@@ -12,11 +12,11 @@
 
 #include <tinyfiledialogs.h>
 
-#include "./motionUtil/bvhExporter.hpp"
-#include "./resourceDirectory.hpp"
-#include "./util/popupUtils.hpp"
-#include "./util/errorUtils.hpp"
-#include "./buildInfo.h"
+#include "motionUtil/bvhExporter.hpp"
+#include "resourceDirectory.hpp"
+#include "util/popupUtils.hpp"
+#include "util/errorUtils.hpp"
+#include "buildInfo.h"
 
 void App::initIkura() {
     // Initialize Ikura

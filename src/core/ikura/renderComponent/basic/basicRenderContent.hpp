@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../renderContent.hpp"
+#include "renderComponent/renderContent.hpp"
 
 namespace ikura {
 // Forward declearation

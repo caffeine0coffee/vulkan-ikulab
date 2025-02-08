@@ -9,8 +9,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "./keyboard.hpp"
-#include "./mouse.hpp"
+#include "keyboard.hpp"
+#include "mouse.hpp"
 
 class Camera {
   public:

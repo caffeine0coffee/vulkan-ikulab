@@ -2,7 +2,7 @@
 // Created by kota.miyakawa on 2024/07/10.
 //
 
-#include "./popupUtils.hpp"
+#include "popupUtils.hpp"
 
 #include <tinyfiledialogs.h>
 

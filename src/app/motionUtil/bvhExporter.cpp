@@ -1,9 +1,9 @@
-#include "./bvhExporter.hpp"
+#include "bvhExporter.hpp"
 
 #include <cstring>
 #include <fstream>
 
-#include "./bvhParser.hpp"
+#include "bvhParser.hpp"
 
 #define INDENT ("  ")
 

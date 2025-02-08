@@ -4,11 +4,11 @@
 
 #include <vulkan/vulkan.hpp>
 
-#include "../../engine/renderEngine/renderEngine.hpp"
-#include "../../window/nativeWindow/nativeWindow.hpp"
-#include "../renderComponentProvider.hpp"
-#include "./basicRenderContent.hpp"
-#include "./basicRenderTarget.hpp"
+#include "basicRenderContent.hpp"
+#include "basicRenderTarget.hpp"
+#include "engine/renderEngine/renderEngine.hpp"
+#include "renderComponent/renderComponentProvider.hpp"
+#include "window/nativeWindow/nativeWindow.hpp"
 
 namespace ikura {
 // Provides Basic RenderComponent compatible with shapes

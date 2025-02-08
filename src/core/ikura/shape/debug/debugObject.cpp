@@ -1,4 +1,4 @@
-#include "./debugObject.hpp"
+#include "debugObject.hpp"
 
 namespace ikura {
 namespace shapes {

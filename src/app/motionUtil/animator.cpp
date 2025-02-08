@@ -5,8 +5,8 @@
 #define GLM_FORCE_RADIANS
 #include <glm/gtc/matrix_transform.hpp>
 
-#include "./animator.hpp"
-#include "./bvhParser.hpp"
+#include "animator.hpp"
+#include "bvhParser.hpp"
 
 // ----------------------------------------
 // Animator::Joint

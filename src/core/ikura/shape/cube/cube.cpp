@@ -1,7 +1,7 @@
+#include "cube.hpp"
+
 #include <algorithm>
 #include <iostream>
-
-#include "cube.hpp"
 
 namespace ikura {
 namespace shapes {

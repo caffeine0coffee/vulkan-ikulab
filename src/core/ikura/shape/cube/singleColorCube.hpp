@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 
-#include "./gradationColorCube.hpp"
+#include "gradationColorCube.hpp"
 
 namespace ikura {
 namespace shapes {

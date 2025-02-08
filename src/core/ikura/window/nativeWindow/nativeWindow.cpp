@@ -1,11 +1,10 @@
-#include "./nativeWindow.hpp"
+#include "nativeWindow.hpp"
 
 #include <easylogging++.h>
 #include <vulkan/vulkan.hpp>
 
-#include "../virtualWindow/virtualWindow.hpp"
-
-#include "../../common/logLevels.hpp"
+#include "common/logLevels.hpp"
+#include "window/virtualWindow/virtualWindow.hpp"
 
 namespace ikura {
 void NativeWindow::recreateSwapChain(bool destroyExistingResources) {}

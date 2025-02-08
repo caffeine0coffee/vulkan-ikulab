@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../shape.hpp"
+#include "shape/shape.hpp"
 
 namespace ikura {
 namespace shapes {

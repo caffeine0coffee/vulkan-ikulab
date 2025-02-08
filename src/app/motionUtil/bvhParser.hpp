@@ -5,8 +5,8 @@
 
 #include <ikura/ikura.hpp>
 
-#include "./animator.hpp"
-#include "./common.hpp"
+#include "animator.hpp"
+#include "common.hpp"
 
 #define TOKEN_TOP "HIERARCHY"
 #define TOKEN_ROOT "ROOT"
