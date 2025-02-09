@@ -1,6 +1,7 @@
 #include "renderEngine.hpp"
 
-// TODO(caffeine): maybe unnecessary, determine later
+// TODO(caffeine): move to dedicated file
+// (see https://gpuopen-librariesandsdks.github.io/VulkanMemoryAllocator/html/quick_start.html)
 #define VMA_IMPLEMENTATION
 
 #include <easylogging++.h>
