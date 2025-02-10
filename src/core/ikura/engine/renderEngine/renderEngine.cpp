@@ -1,17 +1,8 @@
 #include "renderEngine.hpp"
 
-// TODO(caffeine): maybe unnecessary, determine later
+// TODO(caffeine): move to dedicated file
+// (see https://gpuopen-librariesandsdks.github.io/VulkanMemoryAllocator/html/quick_start.html)
 #define VMA_IMPLEMENTATION
-// for compability
-#ifndef VK_API_VERSION_MAJOR
-#define VK_API_VERSION_MAJOR(version) (((uint32_t)(version) >> 22) & 0x7FU)
-#endif
-#ifndef VK_API_VERSION_MINOR
-#define VK_API_VERSION_MINOR(version) (((uint32_t)(version) >> 12) & 0x3FFU)
-#endif
-#ifndef VK_API_VERSION_PATCH
-#define VK_API_VERSION_PATCH(version) ((uint32_t)(version)&0xFFFU)
-#endif
 
 #include <easylogging++.h>
 #include <GLFW/glfw3.h>
