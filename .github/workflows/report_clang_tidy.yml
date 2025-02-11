@@ -42,7 +42,7 @@ jobs:
 
       - name: Run clang-tidy
         run: |
-          run-clang-tidy-18 -p ./build_clang_tidy -use-color | ansi2html > report.html
+          run-clang-tidy-18 -p ./build_clang_tidy -extra-arg-before=-xc++ -use-color | ansi2html > report.html
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
