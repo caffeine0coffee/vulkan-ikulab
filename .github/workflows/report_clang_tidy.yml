@@ -30,7 +30,7 @@ jobs:
 
       - name: Config CMake
         run: |
-          cmake --preset=clang-tidy
+          cmake --preset=clang-tidy -DCMAKE_MAKE_PROGRAM=$(which ninja)
 
       - name: Run clang-tidy
         run: |
