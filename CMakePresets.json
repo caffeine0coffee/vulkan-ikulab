@@ -76,6 +76,11 @@
         "CMAKE_C_COMPILER": "cl.exe",
         "CMAKE_CXX_COMPILER": "cl.exe"
       }
+    },
+    {
+      "name": "clang-tidy",
+      "inherits": "develop",
+      "binaryDir": "${sourceDir}/build_clang_tidy"
     }
   ]
 }
