@@ -2,6 +2,7 @@ name: report-clang-tidy
 on:
   push:
   workflow_call:
+  workflow_dispatch:
 jobs:
   report-clang-tidy:
     runs-on: ubuntu-24.04
