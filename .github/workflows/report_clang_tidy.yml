@@ -1,6 +1,5 @@
 name: report-clang-tidy
 on:
-  push:
   workflow_call:
   workflow_dispatch:
 jobs:
