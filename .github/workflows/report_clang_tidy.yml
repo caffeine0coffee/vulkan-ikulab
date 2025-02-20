@@ -1,0 +1,52 @@
+name: report-clang-tidy
+on:
+  workflow_call:
+  workflow_dispatch:
+jobs:
+  report-clang-tidy:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Cache vcpkg_installed
+        uses: actions/cache@v4
+        with:
+          path: ./build_clang_tidy/vcpkg_installed
+          key: ${{ runner.os }}-${{ runner.arch }}-vcpkg-${{ hashFiles('./vcpkg.json', './core/ikura/vcpkg.json') }}
+
+      - name: Install Apt Packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+          clang-tidy-19 \
+          clang-19 \
+          ninja-build
+          # GLFW3 dependencies
+          sudo apt-get install -y \
+          libxinerama-dev \
+          libxcursor-dev \
+          xorg-dev \
+          libglu1-mesa-dev \
+          pkg-config
+
+      - name: Install Python Packages
+        run: |
+          pipx install ansi2html
+
+      - name: Config CMake
+        run: |
+          cmake --preset=clang-tidy -DCMAKE_MAKE_PROGRAM=$(which ninja) -DCMAKE_CXX_COMPILER=$(which clang++)
+
+      - name: Run clang-tidy
+        run: |
+          run-clang-tidy-19 -p ./build_clang_tidy -header-filter 'src/' -use-color | ansi2html > report.html
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clang_tidy_report.html
+          path: |
+            ./report.html
