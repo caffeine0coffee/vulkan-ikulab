@@ -17,6 +17,16 @@ class Camera {
     float v_rotation_;
     float distance_;
 
+    [[nodiscard]] auto center() const { return center_; }
+    [[nodiscard]] auto h_rotation() const { return h_rotation_; }
+    [[nodiscard]] auto v_rotation() const { return v_rotation_; }
+    [[nodiscard]] auto distance() const { return distance_; }
+
+    void set_center(const glm::vec3 center) { center_ = center; }
+    void set_h_rotation(const float h_rotation) { h_rotation_ = h_rotation; }
+    void set_v_rotation(const float v_rotation) { v_rotation_ = v_rotation; }
+    void set_distance(const float distance) { distance_ = distance; }
+
     void Init();
     void UpdateCamera(std::shared_ptr<Mouse> mouseCtx,
                       std::shared_ptr<Keyboard> keyCtx, bool isWindowFocused);
