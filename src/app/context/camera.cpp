@@ -1,5 +1,10 @@
 #include "camera.hpp"
 
+#include <algorithm>
+
+#include "glm/ext/matrix_transform.hpp"
+#include "glm/trigonometric.hpp"
+
 void Camera::init() {
     center = {0.0, 0.0, 5.0};
     hRotation = 0.0;
