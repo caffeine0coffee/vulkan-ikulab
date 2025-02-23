@@ -1,3 +1,14 @@
-Checks: '-*,bugprone-*,cppcoreguidelines-*,modernize-*,performance-*,portability-*,readability-*,google-*,misc-*'
+Checks: >
+  -*,
+  bugprone-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  google-*,
+  misc-*,
+  -modernize-use-trailing-return-type
+
 WarningsAsErrors: '*'
 FormatStyle: file
