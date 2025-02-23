@@ -10,12 +10,12 @@
 
 class Camera {
   public:
-    glm::vec3 center;
+    glm::vec3 center_;
     /// in Radians
-    float hRotation;
+    float h_rotation_;
     /// in Radians
-    float vRotation;
-    float distance;
+    float v_rotation_;
+    float distance_;
 
     void init();
     void updateCamera(std::shared_ptr<Mouse> mouseCtx,

@@ -6,10 +6,10 @@
 #include "glm/trigonometric.hpp"
 
 void Camera::init() {
-    center = {0.0, 0.0, 5.0};
-    hRotation = 0.0;
-    vRotation = glm::radians(20.0);
-    distance = 50.0;
+    center_ = {0.0, 0.0, 5.0};
+    h_rotation_ = 0.0;
+    v_rotation_ = glm::radians(20.0);
+    distance_ = 50.0;
 }
 
 void Camera::updateCamera(std::shared_ptr<Mouse> mouseCtx,
@@ -29,35 +29,35 @@ void Camera::updateCamera(std::shared_ptr<Mouse> mouseCtx,
                 yDiff *= SHIFT_DIFF_RATIO;
 
                 glm::mat4 r(1.0);
-                r *= glm::rotate(glm::mat4(1.0), hRotation,
+                r *= glm::rotate(glm::mat4(1.0), h_rotation_,
                                  glm::vec3(0.0, 0.0, 1.0));
-                r *= glm::rotate(glm::mat4(1.0), -vRotation,
+                r *= glm::rotate(glm::mat4(1.0), -v_rotation_,
                                  glm::vec3(0.0, 1.0, 0.0));
                 glm::vec4 shift(0.0, -(float)xDiff, (float)yDiff, 1.0);
-                center += glm::vec3(r * shift);
+                center_ += glm::vec3(r * shift);
             } else {
                 xDiff *= ROTATION_DIFF_RATIO;
                 yDiff *= ROTATION_DIFF_RATIO;
 
-                hRotation = std::fmod(hRotation - xDiff, 2 * M_PI);
-                vRotation =
-                    std::clamp(std::fmod(vRotation + yDiff, 2 * M_PI),
+                h_rotation_ = std::fmod(h_rotation_ - xDiff, 2 * M_PI);
+                v_rotation_ =
+                    std::clamp(std::fmod(v_rotation_ + yDiff, 2 * M_PI),
                                -M_PI / 2.0 + 0.0001, M_PI / 2.0 - 0.0001);
             }
         }
-        distance *= std::pow(SCROLL_RATIO, -mouseCtx->scrollOffsetY);
+        distance_ *= std::pow(SCROLL_RATIO, -mouseCtx->scrollOffsetY);
     }
 }
 
 glm::vec3 Camera::generatePos() {
     glm::vec3 pos;
-    pos.x = distance * std::cos(hRotation) * std::cos(vRotation);
-    pos.y = distance * std::sin(hRotation) * std::cos(vRotation);
-    pos.z = distance * std::sin(vRotation);
-    pos += center;
+    pos.x = distance_ * std::cos(h_rotation_) * std::cos(v_rotation_);
+    pos.y = distance_ * std::sin(h_rotation_) * std::cos(v_rotation_);
+    pos.z = distance_ * std::sin(v_rotation_);
+    pos += center_;
     return pos;
 }
 
 glm::mat4 Camera::generateViewMat() {
-    return glm::lookAt(generatePos(), center, glm::vec3(0.0f, 0.0f, 1.0f));
+    return glm::lookAt(generatePos(), center_, glm::vec3(0.0f, 0.0f, 1.0f));
 }
