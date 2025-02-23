@@ -5,14 +5,14 @@
 #include "glm/ext/matrix_transform.hpp"
 #include "glm/trigonometric.hpp"
 
-void Camera::init() {
+void Camera::Init() {
     center_ = {0.0, 0.0, 5.0};
     h_rotation_ = 0.0;
     v_rotation_ = glm::radians(20.0);
     distance_ = 50.0;
 }
 
-void Camera::updateCamera(std::shared_ptr<Mouse> mouseCtx,
+void Camera::UpdateCamera(std::shared_ptr<Mouse> mouseCtx,
                   std::shared_ptr<Keyboard> keyCtx, bool isWindowFocused) {
 
     const static double ROTATION_DIFF_RATIO = 0.01;
@@ -49,7 +49,7 @@ void Camera::updateCamera(std::shared_ptr<Mouse> mouseCtx,
     }
 }
 
-glm::vec3 Camera::generatePos() {
+glm::vec3 Camera::GeneratePos() {
     glm::vec3 pos;
     pos.x = distance_ * std::cos(h_rotation_) * std::cos(v_rotation_);
     pos.y = distance_ * std::sin(h_rotation_) * std::cos(v_rotation_);
@@ -58,6 +58,6 @@ glm::vec3 Camera::generatePos() {
     return pos;
 }
 
-glm::mat4 Camera::generateViewMat() {
-    return glm::lookAt(generatePos(), center_, glm::vec3(0.0f, 0.0f, 1.0f));
+glm::mat4 Camera::GenerateViewMat() {
+    return glm::lookAt(GeneratePos(), center_, glm::vec3(0.0f, 0.0f, 1.0f));
 }

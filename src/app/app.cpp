@@ -173,7 +173,7 @@ void App::initContexts() {
     mouse = std::make_shared<Mouse>();
     ui = std::make_shared<UI>();
 
-    camera->init();
+    camera->Init();
 }
 
 void App::setGlfwWindowEvents(GLFWwindow *window) {
@@ -247,7 +247,7 @@ void App::updateMatrices() {
         m = glm::scale(glm::mat4(1.0), glm::vec3(0.1)) * m;
     }
 
-    sceneMat.view = camera->generateViewMat();
+    sceneMat.view = camera->GenerateViewMat();
     sceneMat.proj = glm::perspective(glm::radians(45.0f),
                                      mainWindow->getWidth() /
                                          (float)mainWindow->getHeight(),
@@ -271,7 +271,7 @@ void App::run() {
     while (!appEngine->shouldTerminated()) {
         appEngine->vSync();
 
-        camera->updateCamera(
+        camera->UpdateCamera(
             mouse, keyboard,
             std::any_of(mainWindow->getVirtualWindows().begin(),
                         mainWindow->getVirtualWindows().end(),

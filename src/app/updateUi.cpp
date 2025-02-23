@@ -456,7 +456,7 @@ void App::updateDebugWindow() {
                 glm::degrees(camera->h_rotation_),
                 glm::degrees(camera->v_rotation_));
     ImGui::Text("Camera distance: %.2f", camera->distance_);
-    glm::vec3 cameraPos = camera->generatePos();
+    glm::vec3 cameraPos = camera->GeneratePos();
     ImGui::Text("Camera position: (%.2f, %.2f, %.2f)", cameraPos.x, cameraPos.y,
                 cameraPos.z);
     ImGui::Text("Camera look-at position: (%.2f, %.2f, %.2f)", camera->center_.x,

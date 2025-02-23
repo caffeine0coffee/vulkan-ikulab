@@ -17,10 +17,10 @@ class Camera {
     float v_rotation_;
     float distance_;
 
-    void init();
-    void updateCamera(std::shared_ptr<Mouse> mouseCtx,
+    void Init();
+    void UpdateCamera(std::shared_ptr<Mouse> mouseCtx,
                       std::shared_ptr<Keyboard> keyCtx, bool isWindowFocused);
 
-    glm::vec3 generatePos();
-    glm::mat4 generateViewMat();
+    glm::vec3 GeneratePos();
+    glm::mat4 GenerateViewMat();
 };
