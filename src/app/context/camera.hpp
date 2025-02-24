@@ -13,9 +13,9 @@
 class Camera {
   public:
     void ResetPosition();
-    void UpdateCamera(const std::shared_ptr<Mouse> &mouseCtx,
-                      const std::shared_ptr<Keyboard> &keyCtx,
-                      bool isWindowFocused);
+    void UpdateCamera(const std::shared_ptr<Mouse> &mouse_context,
+                      const std::shared_ptr<Keyboard> &key_context,
+                      bool is_window_focused);
 
     glm::dvec3 GeneratePos() const;
     glm::dmat4 GenerateViewMat() const;
@@ -32,9 +32,7 @@ class Camera {
 
 private:
     glm::dvec3 center_ = {};
-    /// in Radians
-    double h_rotation_ = 0;
-    /// in Radians
-    double v_rotation_ = 0;
+    double h_rotation_ = 0;  /// in Radians
+    double v_rotation_ = 0;  /// in Radians
     double distance_ = 0;
 };
