@@ -8,7 +8,8 @@ Checks: >
   readability-*,
   google-*,
   misc-*,
-  -modernize-use-trailing-return-type
+  -*-use-trailing-return-type,
+  -*-pro-type-union-access
 
 WarningsAsErrors: '*'
 FormatStyle: file
