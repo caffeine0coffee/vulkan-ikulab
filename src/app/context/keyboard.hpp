@@ -2,7 +2,7 @@
 
 class Keyboard {
   public:
-    bool ctrl = false;
-    bool alt = false;
-    bool shift = false;
+    bool ctrl_ = false;
+    bool alt_ = false;
+    bool shift_ = false;
 };

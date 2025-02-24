@@ -41,7 +41,7 @@ void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouse_context,
             double x_diff = mouse_context->deltaX;
             double y_diff = mouse_context->deltaY;
 
-            if (key_context->shift) {
+            if (key_context->shift_) {
                 x_diff *= kShiftDiffRatio;
                 y_diff *= kShiftDiffRatio;
 
