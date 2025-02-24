@@ -30,9 +30,9 @@ void Camera::ResetPosition() {
 void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouseCtx,
                           const std::shared_ptr<Keyboard> &keyCtx,
                           const bool isWindowFocused) {
-    const static double ROTATION_DIFF_RATIO = 0.01;
-    const static double SHIFT_DIFF_RATIO = 0.1;
-    const static double SCROLL_RATIO = 1.1;
+    static constexpr float ROTATION_DIFF_RATIO = 0.01;
+    static constexpr float SHIFT_DIFF_RATIO = 0.1;
+    static constexpr float SCROLL_RATIO = 1.1;
 
     if (!isWindowFocused) {
         if (mouseCtx->leftButton) {
@@ -43,13 +43,16 @@ void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouseCtx,
                 xDiff *= SHIFT_DIFF_RATIO;
                 yDiff *= SHIFT_DIFF_RATIO;
 
-                glm::mat4 r(1.0);
-                r *= glm::rotate(glm::mat4(1.0), h_rotation_,
-                                 glm::vec3(0.0, 0.0, 1.0));
-                r *= glm::rotate(glm::mat4(1.0), -v_rotation_,
-                                 glm::vec3(0.0, 1.0, 0.0));
-                glm::vec4 shift(0.0, -(float)xDiff, (float)yDiff, 1.0);
-                center_ += glm::vec3(r * shift);
+                glm::mat4 rotate_mat(1.0);
+                rotate_mat *= glm::rotate(glm::mat4(1.0), h_rotation_,
+                                          glm::vec3(0.0, 0.0, 1.0));
+                rotate_mat *= glm::rotate(glm::mat4(1.0), -v_rotation_,
+                                          glm::vec3(0.0, 1.0, 0.0));
+
+                const glm::vec4 move_mat(0.0, -(float)xDiff, (float)yDiff,
+                                          1.0);
+
+                center_ += glm::vec3(rotate_mat * move_mat);
             } else {
                 xDiff *= ROTATION_DIFF_RATIO;
                 yDiff *= ROTATION_DIFF_RATIO;
