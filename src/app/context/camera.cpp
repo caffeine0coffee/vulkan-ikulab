@@ -1,10 +1,17 @@
 #include "camera.hpp"
 
 #include <algorithm>
+#include <cmath>
+#include <memory>
 
+#include "glm/ext/matrix_float4x4.hpp"
+#include "glm/ext/vector_float4.hpp"
 #include "glm/ext/matrix_transform.hpp"
 #include "glm/ext/vector_float3.hpp"
 #include "glm/trigonometric.hpp"
+
+#include "keyboard.hpp"
+#include "mouse.hpp"
 
 namespace {
 constexpr glm::vec3 kDefaultCenter = {0.0, 0.0, 5.0};
@@ -21,8 +28,8 @@ void Camera::ResetPosition() {
 }
 
 void Camera::UpdateCamera(std::shared_ptr<Mouse> mouseCtx,
-                  std::shared_ptr<Keyboard> keyCtx, bool isWindowFocused) {
-
+                          std::shared_ptr<Keyboard> keyCtx,
+                          bool isWindowFocused) {
     const static double ROTATION_DIFF_RATIO = 0.01;
     const static double SHIFT_DIFF_RATIO = 0.1;
     const static double SCROLL_RATIO = 1.1;
