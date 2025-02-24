@@ -29,21 +29,21 @@ void Camera::ResetPosition() {
     distance_ = kDefaultDistance;
 }
 
-void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouseCtx,
-                          const std::shared_ptr<Keyboard> &keyCtx,
-                          const bool isWindowFocused) {
-    static constexpr float ROTATION_DIFF_RATIO = 0.01;
-    static constexpr float SHIFT_DIFF_RATIO = 0.1;
-    static constexpr float SCROLL_RATIO = 1.1;
+void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouse_context,
+                          const std::shared_ptr<Keyboard> &key_context,
+                          const bool is_window_focused) {
+    static constexpr float kRotationDiffRatio = 0.01;
+    static constexpr float kShiftDiffRatio = 0.1;
+    static constexpr float kScrollRatio = 1.1;
 
-    if (!isWindowFocused) {
-        if (mouseCtx->leftButton) {
-            double xDiff = mouseCtx->deltaX;
-            double yDiff = mouseCtx->deltaY;
+    if (!is_window_focused) {
+        if (mouse_context->leftButton) {
+            double x_diff = mouse_context->deltaX;
+            double y_diff = mouse_context->deltaY;
 
-            if (keyCtx->shift) {
-                xDiff *= SHIFT_DIFF_RATIO;
-                yDiff *= SHIFT_DIFF_RATIO;
+            if (key_context->shift) {
+                x_diff *= kShiftDiffRatio;
+                y_diff *= kShiftDiffRatio;
 
                 glm::dmat4 rotate_mat(1.0);
                 rotate_mat *= glm::rotate(glm::dmat4(1.0), h_rotation_,
@@ -51,20 +51,20 @@ void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouseCtx,
                 rotate_mat *= glm::rotate(glm::dmat4(1.0), -v_rotation_,
                                           glm::dvec3(0.0, 1.0, 0.0));
 
-                const glm::dvec4 move_mat(0.0, -xDiff, yDiff, 1.0);
+                const glm::dvec4 move_mat(0.0, -x_diff, y_diff, 1.0);
 
                 center_ += glm::dvec3(rotate_mat * move_mat);
             } else {
-                xDiff *= ROTATION_DIFF_RATIO;
-                yDiff *= ROTATION_DIFF_RATIO;
+                x_diff *= kRotationDiffRatio;
+                y_diff *= kRotationDiffRatio;
 
-                h_rotation_ = std::fmod(h_rotation_ - xDiff, 2 * M_PI);
+                h_rotation_ = std::fmod(h_rotation_ - x_diff, 2 * M_PI);
                 v_rotation_ =
-                    std::clamp(std::fmod(v_rotation_ + yDiff, 2 * M_PI),
+                    std::clamp(std::fmod(v_rotation_ + y_diff, 2 * M_PI),
                                -M_PI / 2.0 + 0.0001, M_PI / 2.0 - 0.0001);
             }
         }
-        distance_ *= std::pow(SCROLL_RATIO, -mouseCtx->scrollOffsetY);
+        distance_ *= std::pow(kScrollRatio, -mouse_context->scrollOffsetY);
     }
 }
 
