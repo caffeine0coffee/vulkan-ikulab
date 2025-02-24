@@ -1,5 +1,7 @@
 #include "camera.hpp"
 
+// TODO(caffeine): upgrade to C++20 and include <numbers>
+// and replace M_PI with std::numbers::pi
 #include <algorithm>
 #include <cmath>
 #include <memory>
