@@ -3,13 +3,21 @@
 #include <algorithm>
 
 #include "glm/ext/matrix_transform.hpp"
+#include "glm/ext/vector_float3.hpp"
 #include "glm/trigonometric.hpp"
 
+namespace {
+constexpr glm::vec3 kDefaultCenter = {0.0, 0.0, 5.0};
+constexpr float kDefaultHRotation = 0.0;
+constexpr float kDefaultVRotation = glm::radians(20.0);
+constexpr float kDefaultDistance = 50.0;
+}  // namespace
+
 void Camera::ResetPosition() {
-    center_ = {0.0, 0.0, 5.0};
-    h_rotation_ = 0.0;
-    v_rotation_ = glm::radians(20.0);
-    distance_ = 50.0;
+    center_ = kDefaultCenter;
+    h_rotation_ = kDefaultHRotation;
+    v_rotation_ = kDefaultVRotation;
+    distance_ = kDefaultDistance;
 }
 
 void Camera::UpdateCamera(std::shared_ptr<Mouse> mouseCtx,
