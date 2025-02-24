@@ -173,7 +173,7 @@ void App::initContexts() {
     mouse = std::make_shared<Mouse>();
     ui = std::make_shared<UI>();
 
-    camera->Init();
+    camera->ResetPosition();
 }
 
 void App::setGlfwWindowEvents(GLFWwindow *window) {

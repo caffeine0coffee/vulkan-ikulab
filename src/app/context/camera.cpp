@@ -5,7 +5,7 @@
 #include "glm/ext/matrix_transform.hpp"
 #include "glm/trigonometric.hpp"
 
-void Camera::Init() {
+void Camera::ResetPosition() {
     center_ = {0.0, 0.0, 5.0};
     h_rotation_ = 0.0;
     v_rotation_ = glm::radians(20.0);

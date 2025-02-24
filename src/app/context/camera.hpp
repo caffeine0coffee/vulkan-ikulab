@@ -10,7 +10,7 @@
 
 class Camera {
   public:
-    void Init();
+    void ResetPosition();
     void UpdateCamera(std::shared_ptr<Mouse> mouseCtx,
                       std::shared_ptr<Keyboard> keyCtx, bool isWindowFocused);
 
