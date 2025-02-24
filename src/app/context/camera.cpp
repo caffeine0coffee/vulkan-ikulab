@@ -1,58 +1,82 @@
 #include "camera.hpp"
 
-void Camera::init() {
-    center = {0.0, 0.0, 5.0};
-    hRotation = 0.0;
-    vRotation = glm::radians(20.0);
-    distance = 50.0;
+// TODO(caffeine): upgrade to C++20 and include <numbers>
+// and replace M_PI with std::numbers::pi
+#include <algorithm>
+#include <cmath>
+#include <memory>
+
+#include "glm/ext/matrix_double4x4.hpp"
+#include "glm/ext/matrix_transform.hpp"
+#include "glm/ext/vector_double3.hpp"
+#include "glm/ext/vector_double4.hpp"
+#include "glm/trigonometric.hpp"
+
+#include "keyboard.hpp"
+#include "mouse.hpp"
+
+namespace {
+constexpr glm::dvec3 kDefaultCenter = {0.0, 0.0, 5.0};
+constexpr double kDefaultHRotation = 0.0;
+constexpr double kDefaultVRotation = glm::radians(20.0);
+constexpr double kDefaultDistance = 50.0;
+}  // namespace
+
+void Camera::ResetPosition() {
+    center_ = kDefaultCenter;
+    h_rotation_ = kDefaultHRotation;
+    v_rotation_ = kDefaultVRotation;
+    distance_ = kDefaultDistance;
 }
 
-void Camera::updateCamera(std::shared_ptr<Mouse> mouseCtx,
-                  std::shared_ptr<Keyboard> keyCtx, bool isWindowFocused) {
+void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouse_context,
+                          const std::shared_ptr<Keyboard> &key_context,
+                          const bool is_window_focused) {
+    static constexpr float kRotationDiffRatio = 0.01;
+    static constexpr float kShiftDiffRatio = 0.1;
+    static constexpr float kScrollRatio = 1.1;
 
-    const static double ROTATION_DIFF_RATIO = 0.01;
-    const static double SHIFT_DIFF_RATIO = 0.1;
-    const static double SCROLL_RATIO = 1.1;
+    if (!is_window_focused) {
+        if (mouse_context->leftButton) {
+            double x_diff = mouse_context->deltaX;
+            double y_diff = mouse_context->deltaY;
 
-    if (!isWindowFocused) {
-        if (mouseCtx->leftButton) {
-            double xDiff = mouseCtx->deltaX;
-            double yDiff = mouseCtx->deltaY;
+            if (key_context->shift_) {
+                x_diff *= kShiftDiffRatio;
+                y_diff *= kShiftDiffRatio;
 
-            if (keyCtx->shift) {
-                xDiff *= SHIFT_DIFF_RATIO;
-                yDiff *= SHIFT_DIFF_RATIO;
+                glm::dmat4 rotate_mat(1.0);
+                rotate_mat *= glm::rotate(glm::dmat4(1.0), h_rotation_,
+                                          glm::dvec3(0.0, 0.0, 1.0));
+                rotate_mat *= glm::rotate(glm::dmat4(1.0), -v_rotation_,
+                                          glm::dvec3(0.0, 1.0, 0.0));
 
-                glm::mat4 r(1.0);
-                r *= glm::rotate(glm::mat4(1.0), hRotation,
-                                 glm::vec3(0.0, 0.0, 1.0));
-                r *= glm::rotate(glm::mat4(1.0), -vRotation,
-                                 glm::vec3(0.0, 1.0, 0.0));
-                glm::vec4 shift(0.0, -(float)xDiff, (float)yDiff, 1.0);
-                center += glm::vec3(r * shift);
+                const glm::dvec4 move_mat(0.0, -x_diff, y_diff, 1.0);
+
+                center_ += glm::dvec3(rotate_mat * move_mat);
             } else {
-                xDiff *= ROTATION_DIFF_RATIO;
-                yDiff *= ROTATION_DIFF_RATIO;
+                x_diff *= kRotationDiffRatio;
+                y_diff *= kRotationDiffRatio;
 
-                hRotation = std::fmod(hRotation - xDiff, 2 * M_PI);
-                vRotation =
-                    std::clamp(std::fmod(vRotation + yDiff, 2 * M_PI),
+                h_rotation_ = std::fmod(h_rotation_ - x_diff, 2 * M_PI);
+                v_rotation_ =
+                    std::clamp(std::fmod(v_rotation_ + y_diff, 2 * M_PI),
                                -M_PI / 2.0 + 0.0001, M_PI / 2.0 - 0.0001);
             }
         }
-        distance *= std::pow(SCROLL_RATIO, -mouseCtx->scrollOffsetY);
+        distance_ *= std::pow(kScrollRatio, -mouse_context->scrollOffsetY);
     }
 }
 
-glm::vec3 Camera::generatePos() {
-    glm::vec3 pos;
-    pos.x = distance * std::cos(hRotation) * std::cos(vRotation);
-    pos.y = distance * std::sin(hRotation) * std::cos(vRotation);
-    pos.z = distance * std::sin(vRotation);
-    pos += center;
+glm::dvec3 Camera::GeneratePos() const {
+    glm::dvec3 pos;
+    pos.x = distance_ * std::cos(h_rotation_) * std::cos(v_rotation_);
+    pos.y = distance_ * std::sin(h_rotation_) * std::cos(v_rotation_);
+    pos.z = distance_ * std::sin(v_rotation_);
+    pos += center_;
     return pos;
 }
 
-glm::mat4 Camera::generateViewMat() {
-    return glm::lookAt(generatePos(), center, glm::vec3(0.0f, 0.0f, 1.0f));
+glm::dmat4 Camera::GenerateViewMat() const {
+    return glm::lookAt(GeneratePos(), center_, glm::dvec3(0.0, 0.0, 1.0));
 }

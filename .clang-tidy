@@ -1,3 +1,15 @@
-Checks: '-*,bugprone-*,cppcoreguidelines-*,modernize-*,performance-*,portability-*,readability-*,google-*,misc-*'
+Checks: >
+  -*,
+  bugprone-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  google-*,
+  misc-*,
+  -*-use-trailing-return-type,
+  -*-pro-type-union-access
+
 WarningsAsErrors: '*'
 FormatStyle: file
