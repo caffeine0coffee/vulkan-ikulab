@@ -27,9 +27,9 @@ void Camera::ResetPosition() {
     distance_ = kDefaultDistance;
 }
 
-void Camera::UpdateCamera(std::shared_ptr<Mouse> mouseCtx,
-                          std::shared_ptr<Keyboard> keyCtx,
-                          bool isWindowFocused) {
+void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouseCtx,
+                          const std::shared_ptr<Keyboard> &keyCtx,
+                          const bool isWindowFocused) {
     const static double ROTATION_DIFF_RATIO = 0.01;
     const static double SHIFT_DIFF_RATIO = 0.1;
     const static double SCROLL_RATIO = 1.1;

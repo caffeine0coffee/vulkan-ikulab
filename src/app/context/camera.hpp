@@ -11,8 +11,8 @@
 class Camera {
   public:
     void ResetPosition();
-    void UpdateCamera(std::shared_ptr<Mouse> mouseCtx,
-                      std::shared_ptr<Keyboard> keyCtx, bool isWindowFocused);
+    void UpdateCamera(const std::shared_ptr<Mouse> &mouseCtx,
+                      const std::shared_ptr<Keyboard> &keyCtx, bool isWindowFocused);
 
     glm::vec3 GeneratePos();
     glm::mat4 GenerateViewMat();
