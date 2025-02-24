@@ -28,10 +28,10 @@ class Camera {
     void set_distance(const float distance) { distance_ = distance; }
 
 private:
-    glm::vec3 center_;
+    glm::vec3 center_ = {};
     /// in Radians
-    float h_rotation_;
+    float h_rotation_ = 0;
     /// in Radians
-    float v_rotation_;
-    float distance_;
+    float v_rotation_ = 0;
+    float distance_ = 0;
 };
