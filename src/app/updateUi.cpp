@@ -45,35 +45,35 @@ void App::updateUI() {
 
 void App::updateMainMenu() {
     if (ImGui::BeginMainMenuBar()) {
-        if (ImGui::BeginMenu(u8"ファイル")) {
-            if (ImGui::MenuItem(u8"BVHファイルを開く")) {
+        if (ImGui::BeginMenu("ファイル")) {
+            if (ImGui::MenuItem("BVHファイルを開く")) {
                 selectFileAndInitShapes();
             }
-            if (ImGui::MenuItem(u8"ループ範囲をエクスポート")) {
+            if (ImGui::MenuItem("ループ範囲をエクスポート")) {
                 selectFileAndExportLoopRange();
             }
             ImGui::EndMenu();
         }
 
-        if (ImGui::BeginMenu(u8"ウィンドウ")) {
-            ImGui::Checkbox(u8"デバッグウィンドウ", &ui->debugWindow.show);
-            ImGui::Checkbox(u8"アニメーションコントロールウィンドウ",
+        if (ImGui::BeginMenu("ウィンドウ")) {
+            ImGui::Checkbox("デバッグウィンドウ", &ui->debugWindow.show);
+            ImGui::Checkbox("アニメーションコントロールウィンドウ",
                             &ui->animationControlWindow.show);
             ImGui::EndMenu();
         }
 
-        if (ImGui::BeginMenu(u8"表示")) {
-            ImGui::Checkbox(u8"軸オブジェクト", &ui->showAxisObject);
-            ImGui::Checkbox(u8"床", &ui->showFloor);
+        if (ImGui::BeginMenu("表示")) {
+            ImGui::Checkbox("軸オブジェクト", &ui->showAxisObject);
+            ImGui::Checkbox("床", &ui->showFloor);
             ImGui::EndMenu();
         }
 
-        if (ImGui::BeginMenu(u8"設定")) {
+        if (ImGui::BeginMenu("設定")) {
             // Rotation Order --------------------
             if (!modelLoaded) {
                 ImGui::BeginDisabled();
             }
-            ImGui::Text(u8"回転順序");
+            ImGui::Text("回転順序");
             ImGui::SameLine();
             ImGui::PushItemWidth(80);
             auto oldRotationOrderIndex = ui->config.rotationOrderIndex;
@@ -92,7 +92,7 @@ void App::updateMainMenu() {
             }
 
             // Export Option --------------------
-            ImGui::Checkbox(u8"全てのPositionチャンネルをエクスポート",
+            ImGui::Checkbox("全てのPositionチャンネルをエクスポート",
                             &ui->config.exportAllPositionChannel);
 
             ImGui::EndMenu();
@@ -126,7 +126,7 @@ void App::updateAnimationControlWindow() {
         initAnimationControlWindowSize(mainWindow, ui->animationControlWindow);
     }
 
-    ImGui::Begin(u8"アニメーションコントロール");
+    ImGui::Begin("アニメーションコントロール");
 
     if (!modelLoaded) {
         ImGui::BeginDisabled();
@@ -423,14 +423,14 @@ void App::updateDebugWindow() {
         ui->debugWindow.sizeInitialized = true;
     }
 
-    ImGui::Begin(u8"デバッグ");
+    ImGui::Begin("デバッグ");
     ImGuiIO &io = ImGui::GetIO();
 
-    ImGui::Checkbox(u8"ImGui DemoWindowを表示する##show_imgui_window",
+    ImGui::Checkbox("ImGui DemoWindowを表示する##show_imgui_window",
                     &ui->showImGuiDemoWindow);
-    ImGui::Checkbox(u8"軸オブジェクトを表示する##show_axis_object",
+    ImGui::Checkbox("軸オブジェクトを表示する##show_axis_object",
                     &ui->showAxisObject);
-    ImGui::Checkbox(u8"床を表示する##show_floor", &ui->showFloor);
+    ImGui::Checkbox("床を表示する##show_floor", &ui->showFloor);
     // ImGui::Checkbox("垂直同期を有効化する##enable_vsinc", &ui->enableVsinc);
 
     UI::makePadding(20);
