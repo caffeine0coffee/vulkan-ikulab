@@ -59,12 +59,14 @@ void Camera::UpdateCamera(const std::shared_ptr<Mouse>& mouse_context,
 
                 constexpr double kVRotationMargin = 0.0001;
 
+                // NOLINTBEGIN(*-magic-numbers)
                 h_rotation_ =
                     std::fmod(h_rotation_ - x_diff, 2.0 * std::numbers::pi);
                 v_rotation_ = std::clamp(
                     std::fmod(v_rotation_ + y_diff, 2.0 * std::numbers::pi),
                     -std::numbers::pi / 2.0 + kVRotationMargin,
                     std::numbers::pi / 2.0 - kVRotationMargin);
+                // NOLINTEND(*-magic-numbers)
             }
         }
         distance_ *= std::pow(kScrollRatio, -mouse_context->scrollOffsetY);
