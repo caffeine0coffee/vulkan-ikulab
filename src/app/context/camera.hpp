@@ -15,8 +15,8 @@ class Camera {
                       const std::shared_ptr<Keyboard> &key_context,
                       bool is_window_focused);
 
-    glm::dvec3 GeneratePos() const;
-    glm::dmat4 GenerateViewMat() const;
+    [[nodiscard]] glm::dvec3 GeneratePos() const;
+    [[nodiscard]] glm::dmat4 GenerateViewMat() const;
 
     [[nodiscard]] auto center() const { return center_; }
     [[nodiscard]] auto h_rotation() const { return h_rotation_; }
