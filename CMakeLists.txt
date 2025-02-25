@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 project(ikulab-motion-viewer VERSION 1.2.2 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 20)
+
 # ------------------------------------------------------------
 # build settings for each platform
 # ------------------------------------------------------------
@@ -13,17 +15,18 @@ if (WIN32)
     add_compile_options(
             -D_USE_MATH_DEFINES
             -DIS_WINDOWS
+            -std:c++20
     )
 elseif (LINUX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
     add_compile_options(
-            -std=c++17 -fdiagnostics-color=always -g
+            -std=c++20 -fdiagnostics-color=always -g
             -Wno-nullability-completeness
     )
 elseif (APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
     add_compile_options(
-            -std=c++17 -fdiagnostics-color=always -g
+            -std=c++20 -fdiagnostics-color=always -g
             -Wno-nullability-completeness
     )
 endif ()
