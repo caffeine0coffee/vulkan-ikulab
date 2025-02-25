@@ -16,6 +16,7 @@ if (WIN32)
             -D_USE_MATH_DEFINES
             -DIS_WINDOWS
             -std:c++20
+            -utf-8
     )
 elseif (LINUX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
