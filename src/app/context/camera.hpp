@@ -23,7 +23,7 @@ class Camera {
     [[nodiscard]] auto v_rotation() const { return v_rotation_; }
     [[nodiscard]] auto distance() const { return distance_; }
 
-    void set_center(const glm::dvec3 center) { center_ = center; }
+    void set_center(const glm::dvec3 &center) { center_ = center; }
     void set_h_rotation(const float h_rotation) { h_rotation_ = h_rotation; }
     void set_v_rotation(const float v_rotation) { v_rotation_ = v_rotation; }
     void set_distance(const float distance) { distance_ = distance; }
