@@ -8,8 +8,6 @@
 #include "keyboard.hpp"
 #include "mouse.hpp"
 
-#include <motionUtil/animator.hpp>
-
 class Camera {
   public:
     void ResetPosition();
