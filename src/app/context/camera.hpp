@@ -18,10 +18,10 @@ class Camera {
     [[nodiscard]] glm::dvec3 GeneratePos() const;
     [[nodiscard]] glm::dmat4 GenerateViewMat() const;
 
-    [[nodiscard]] auto center() const { return center_; }
-    [[nodiscard]] auto h_rotation() const { return h_rotation_; }
-    [[nodiscard]] auto v_rotation() const { return v_rotation_; }
-    [[nodiscard]] auto distance() const { return distance_; }
+    [[nodiscard]] glm::dvec3 center() const { return center_; }
+    [[nodiscard]] double h_rotation() const { return h_rotation_; }
+    [[nodiscard]] double v_rotation() const { return v_rotation_; }
+    [[nodiscard]] double distance() const { return distance_; }
 
     void set_center(const glm::dvec3& center) { center_ = center; }
     void set_h_rotation(const float h_rotation) { h_rotation_ = h_rotation; }
