@@ -4,3 +4,7 @@ IndentWidth: 4
 AccessModifierOffset: -2
 
 IncludeBlocks: Preserve
+
+DerivePointerAlignment: false
+PointerAlignment: Left
+ReferenceAlignment: Left

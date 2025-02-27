@@ -1,10 +1,9 @@
 #include "camera.hpp"
 
-// TODO(caffeine): upgrade to C++20 and include <numbers>
-// and replace M_PI with std::numbers::pi
 #include <algorithm>
 #include <cmath>
 #include <memory>
+#include <numbers>
 
 #include "glm/ext/matrix_double4x4.hpp"
 #include "glm/ext/matrix_transform.hpp"
@@ -20,6 +19,7 @@ constexpr glm::dvec3 kDefaultCenter = {0.0, 0.0, 5.0};
 constexpr double kDefaultHRotation = 0.0;
 constexpr double kDefaultVRotation = glm::radians(20.0);
 constexpr double kDefaultDistance = 50.0;
+constexpr double kVRotationMargin = 0.0001;
 }  // namespace
 
 void Camera::ResetPosition() {
@@ -29,8 +29,8 @@ void Camera::ResetPosition() {
     distance_ = kDefaultDistance;
 }
 
-void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouse_context,
-                          const std::shared_ptr<Keyboard> &key_context,
+void Camera::UpdateCamera(const std::shared_ptr<Mouse>& mouse_context,
+                          const std::shared_ptr<Keyboard>& key_context,
                           const bool is_window_focused) {
     static constexpr float kRotationDiffRatio = 0.01;
     static constexpr float kShiftDiffRatio = 0.1;
@@ -58,10 +58,14 @@ void Camera::UpdateCamera(const std::shared_ptr<Mouse> &mouse_context,
                 x_diff *= kRotationDiffRatio;
                 y_diff *= kRotationDiffRatio;
 
-                h_rotation_ = std::fmod(h_rotation_ - x_diff, 2 * M_PI);
-                v_rotation_ =
-                    std::clamp(std::fmod(v_rotation_ + y_diff, 2 * M_PI),
-                               -M_PI / 2.0 + 0.0001, M_PI / 2.0 - 0.0001);
+                // NOLINTBEGIN(*-magic-numbers)
+                h_rotation_ =
+                    std::fmod(h_rotation_ - x_diff, 2.0 * std::numbers::pi);
+                v_rotation_ = std::clamp(
+                    std::fmod(v_rotation_ + y_diff, 2.0 * std::numbers::pi),
+                    -std::numbers::pi / 2.0 + kVRotationMargin,
+                    std::numbers::pi / 2.0 - kVRotationMargin);
+                // NOLINTEND(*-magic-numbers)
             }
         }
         distance_ *= std::pow(kScrollRatio, -mouse_context->scrollOffsetY);
