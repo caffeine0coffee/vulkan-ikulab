@@ -19,6 +19,7 @@ constexpr glm::dvec3 kDefaultCenter = {0.0, 0.0, 5.0};
 constexpr double kDefaultHRotation = 0.0;
 constexpr double kDefaultVRotation = glm::radians(20.0);
 constexpr double kDefaultDistance = 50.0;
+constexpr double kVRotationMargin = 0.0001;
 }  // namespace
 
 void Camera::ResetPosition() {
@@ -56,8 +57,6 @@ void Camera::UpdateCamera(const std::shared_ptr<Mouse>& mouse_context,
             } else {
                 x_diff *= kRotationDiffRatio;
                 y_diff *= kRotationDiffRatio;
-
-                constexpr double kVRotationMargin = 0.0001;
 
                 // NOLINTBEGIN(*-magic-numbers)
                 h_rotation_ =
