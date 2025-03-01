@@ -9,7 +9,7 @@ Checks: >
   google-*,
   misc-*,
   -*-use-trailing-return-type,
-  -*-pro-type-union-access
+  -*-pro-type-union-access,
   -*-math-missing-parentheses
 
 WarningsAsErrors: '*'
