@@ -8,12 +8,6 @@ void App::cursorPositionCallback(GLFWwindow *window, double xPos, double yPos) {
 
     app->mouse->set_current_x(xPos);
     app->mouse->set_current_y(yPos);
-
-    // record drag end position
-    if (app->mouse->left_button()) {
-        app->mouse->set_drag_end_x(xPos);
-        app->mouse->set_drag_end_y(yPos);
-    }
 }
 
 void App::mouseButtonCallback(GLFWwindow *window, int button, int action,
@@ -37,8 +31,6 @@ void App::mouseButtonCallback(GLFWwindow *window, int button, int action,
     if (app->mouse->left_button()) {
         app->mouse->set_drag_start_x(app->mouse->current_x());
         app->mouse->set_drag_start_y(app->mouse->current_y());
-        app->mouse->set_drag_end_x(app->mouse->current_x());
-        app->mouse->set_drag_end_y(app->mouse->current_y());
     }
 }
 

@@ -12,8 +12,6 @@ class Mouse {
 
     [[nodiscard]] double drag_start_x() const { return drag_start_x_; }
     [[nodiscard]] double drag_start_y() const { return drag_start_y_; }
-    [[nodiscard]] double drag_end_x() const { return drag_end_x_; }
-    [[nodiscard]] double drag_end_y() const { return drag_end_y_; }
 
     [[nodiscard]] double current_x() const { return current_x_; }
     [[nodiscard]] double current_y() const { return current_y_; }
@@ -37,8 +35,6 @@ class Mouse {
     void set_drag_start_y(const double drag_start_y) {
         drag_start_y_ = drag_start_y;
     }
-    void set_drag_end_x(const double drag_end_x) { drag_end_x_ = drag_end_x; }
-    void set_drag_end_y(const double drag_end_y) { drag_end_y_ = drag_end_y; }
     void set_current_x(const double current_x) { current_x_ = current_x; }
     void set_current_y(const double current_y) { current_y_ = current_y; }
     void set_delta_x(const double delta_x) { delta_x_ = delta_x; }

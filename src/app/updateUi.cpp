@@ -445,7 +445,6 @@ void App::updateDebugWindow() {
     ImGui::Text("Cursor Pos: (%.1f, %.1f)", mouse->current_x(), mouse->current_y());
     ImGui::Text("DragStart: (%.1f, %.1f)", mouse->drag_start_x(),
                 mouse->drag_start_y());
-    ImGui::Text("DragEnd: (%.1f, %.1f)", mouse->drag_end_x(), mouse->drag_end_y());
     ImGui::Text("Button L/R/M: (%d / %d / %d)", mouse->left_button(),
                 mouse->right_button(), mouse->middle_button());
 
