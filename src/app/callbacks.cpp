@@ -29,8 +29,7 @@ void App::mouseButtonCallback(GLFWwindow *window, int button, int action,
 
     // init drag position
     if (app->mouse->left_button()) {
-        app->mouse->set_drag_start_x(app->mouse->current_x());
-        app->mouse->set_drag_start_y(app->mouse->current_y());
+        app->mouse->InitDragPosition();
     }
 }
 
