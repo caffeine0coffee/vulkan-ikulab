@@ -21,14 +21,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build Version Checker
-        run: version_checker/build.ps1
+        run: subprojects/version_checker/build.ps1
 
       - name: Build vc++ installer script
-        run: |
-          pyinstaller --onefile `
-            --distpath ./dist_pyinstaller `
-            --workpath ./build_pyinstaller `
-            ./assets/windows/installer/check_vcpp_version_and_install.py
+        run: subprojects/vcpp_installer/build.ps1
 
       - name: Install Ninja
         run: choco install ninja
@@ -37,34 +33,34 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1
 
       - name: Cache vcpkg_installed
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ./build_release_windows/vcpkg_installed
           key: ${{ runner.os }}-${{ runner.arch }}-vcpkg-${{ hashFiles('./vcpkg.json', './core/ikura/vcpkg.json') }}
 
       - name: save VC++ version file
-        run: bash ./utils/scripts/create_vcpp_version_file.sh
+        run: bash ./scripts/create_vcpp_version_file.sh
 
       - name: copy vc_redist.*.exe
-        run: bash ./utils/scripts/copy_vc_redist_exe.sh
+        run: bash ./scripts/copy_vc_redist_exe.sh
 
       - name: Install NSIS Plugin for x86-ansi
         run: |
           cp `
-          ./assets/windows/installer/NsisPlugin/AccessControl_x86_ansi.dll `
+          ./subprojects/windows_installer/NsisPlugin/AccessControl_x86_ansi.dll `
           "C:/Program Files (x86)/NSIS/Plugins/x86-ansi/AccessControl.dll"
 
       - name: Install NSIS Plugin for x86-unicode
         run: |
           cp `
-          ./assets/windows/installer/NsisPlugin/AccessControl_x86_unicode.dll `
+          ./subprojects/windows_installer/NsisPlugin/AccessControl_x86_unicode.dll `
           "C:/Program Files (x86)/NSIS/Plugins/x86-unicode/AccessControl.dll"
 
       - name: Build
-        run: utils/scripts/build_win_package.ps1
+        run: ./scripts/build_win_package.ps1
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ikulab-motion-viewer-x64-windows
           path: |

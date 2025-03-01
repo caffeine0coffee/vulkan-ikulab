@@ -16,7 +16,7 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "RESOURCE_DIR": "${sourceDir}/assets",
+        "RESOURCE_DIR": "${sourceDir}/assets_for_dev",
         "FORCE_USE_CPP_MAIN": "ON"
       }
     },
@@ -76,6 +76,11 @@
         "CMAKE_C_COMPILER": "cl.exe",
         "CMAKE_CXX_COMPILER": "cl.exe"
       }
+    },
+    {
+      "name": "clang-tidy",
+      "inherits": "develop",
+      "binaryDir": "${sourceDir}/build_clang_tidy"
     }
   ]
 }

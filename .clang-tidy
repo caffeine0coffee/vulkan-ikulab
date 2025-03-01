@@ -1,0 +1,16 @@
+Checks: >
+  -*,
+  bugprone-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  google-*,
+  misc-*,
+  -*-use-trailing-return-type,
+  -*-pro-type-union-access,
+  -*-math-missing-parentheses
+
+WarningsAsErrors: '*'
+FormatStyle: file

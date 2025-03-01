@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 project(ikulab-motion-viewer VERSION 1.2.2 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 20)
+
 # ------------------------------------------------------------
 # build settings for each platform
 # ------------------------------------------------------------
@@ -13,17 +15,19 @@ if (WIN32)
     add_compile_options(
             -D_USE_MATH_DEFINES
             -DIS_WINDOWS
+            -std:c++20
+            -utf-8
     )
 elseif (LINUX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
     add_compile_options(
-            -std=c++17 -fdiagnostics-color=always -g
+            -std=c++20 -fdiagnostics-color=always -g
             -Wno-nullability-completeness
     )
 elseif (APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
     add_compile_options(
-            -std=c++17 -fdiagnostics-color=always -g
+            -std=c++20 -fdiagnostics-color=always -g
             -Wno-nullability-completeness
     )
 endif ()
@@ -38,39 +42,36 @@ if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
 endif ()
 
 # build ikura
-add_subdirectory(${CMAKE_SOURCE_DIR}/core/ikura)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/core/ikura)
 # build ikulab-motion-viewer
-add_subdirectory(${CMAKE_SOURCE_DIR}/app)
+add_subdirectory(${CMAKE_SOURCE_DIR}/src/app)
 # link ikura to ikulab-motion-viewer
 target_link_libraries(ikulab-motion-viewer PRIVATE ikura)
 
-# find / link external libraries
+# find / link third party libraries
 # libraries are installed via vcpkg
 find_package(tinyfiledialogs CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
 target_link_libraries(ikulab-motion-viewer PRIVATE tinyfiledialogs::tinyfiledialogs)
 target_link_libraries(ikulab-motion-viewer PRIVATE glm::glm)
 
-if (WIN32)
-    # add resource file
-    target_sources(ikulab-motion-viewer PRIVATE assets/windows/icon.rc)
-
-    # if FORCE_USE_CPP_MAIN is not defined
-    if ("${FORCE_USE_CPP_MAIN}" STREQUAL "ON")
-        message("Build as Windows console application")
-    else ()
-        message("Build as Windows GUI application")
-        # Set entry point to WinMain
-        set_target_properties(ikulab-motion-viewer PROPERTIES WIN32_EXECUTABLE TRUE)
-    endif ()
+if ("${FORCE_USE_CPP_MAIN}" STREQUAL "ON")
+    message("Build as console application for Windows")
+else ()
+    message("Build as GUI application for Windows")
+    # Set entry point to WinMain
+    set_target_properties(ikulab-motion-viewer PROPERTIES WIN32_EXECUTABLE TRUE)
 endif ()
 
-configure_file(${CMAKE_SOURCE_DIR}/app/buildInfo.h.in ${CMAKE_SOURCE_DIR}/app/buildInfo.h)
+configure_file(${CMAKE_SOURCE_DIR}/src/app/buildInfo.h.in ${CMAKE_SOURCE_DIR}/src/app/buildInfo.h)
 configure_file(${CMAKE_SOURCE_DIR}/assets/macos/Info.plist.in ${CMAKE_SOURCE_DIR}/assets/macos/Info.plist)
 
 # ------------------------------------------------------------
 # config ikulab-motion-viewer 
 # ------------------------------------------------------------
+
+target_compile_definitions(ikulab-motion-viewer PRIVATE GLFW_INCLUDE_VULKAN)
+target_compile_definitions(ikulab-motion-viewer PRIVATE GLM_FORCE_DEPTH_ZERO_TO_ONE GLM_FORCE_RADIANS)
 
 # override application resource director
 if (DEFINED RESOURCE_DIR)
@@ -160,4 +161,10 @@ add_custom_target(write_version_info
     COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/version_info
     COMMAND ${CMAKE_COMMAND} -E echo "v${PROJECT_VERSION}" > ${PROJECT_BINARY_DIR}/version_info/current_version.txt
     COMMAND ${CMAKE_COMMAND} -E echo "v${PROJECT_VERSION}" > ${PROJECT_BINARY_DIR}/version_info/skip_version.txt
+)
+
+add_custom_target(write_version_info_for_develop
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${RESOURCE_DIR}/version_info
+    COMMAND ${CMAKE_COMMAND} -E echo "v${PROJECT_VERSION}" > ${RESOURCE_DIR}/version_info/current_version.txt
+    COMMAND ${CMAKE_COMMAND} -E echo "v${PROJECT_VERSION}" > ${RESOURCE_DIR}/version_info/skip_version.txt
 )

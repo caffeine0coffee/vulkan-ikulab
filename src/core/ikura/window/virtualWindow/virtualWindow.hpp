@@ -1,0 +1,22 @@
+#pragma once
+
+#include <memory>
+
+#include "window/nativeWindow/nativeWindow.hpp"
+#include "window/window.hpp"
+
+namespace ikura {
+class VirtualWindow : public Window {
+  protected:
+    // TODO: remove this: *renderEngine is already owned by Window
+    std::shared_ptr<RenderEngine> renderEngine;
+
+    VirtualWindow(std::shared_ptr<RenderEngine> renderEngine);
+
+  public:
+    ~VirtualWindow();
+
+    virtual void recordCommandBuffer(vk::CommandBuffer);
+    virtual bool isFocused() const;
+};
+} // namespace ikura
