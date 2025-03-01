@@ -4,7 +4,7 @@
 
 class Mouse {
   public:
-    void reset();
+    void Reset();
 
     [[nodiscard]] bool left_button() const { return left_button_; }
     [[nodiscard]] bool right_button() const { return right_button_; }
