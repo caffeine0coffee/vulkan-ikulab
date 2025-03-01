@@ -2,23 +2,23 @@
 
 class Mouse {
   public:
-    bool leftButton = false;
-    bool rightButton = false;
-    bool middleButton = false;
+    bool left_button_ = false;
+    bool right_button_ = false;
+    bool middle_button_ = false;
 
-    double dragStartX = 0.0;
-    double dragStartY = 0.0;
-    double dragEndX = 0.0;
-    double dragEndY = 0.0;
+    double drag_start_x_ = 0.0;
+    double drag_start_y_ = 0.0;
+    double drag_end_x_ = 0.0;
+    double drag_end_y_ = 0.0;
 
-    double currentX = 0.0;
-    double currentY = 0.0;
+    double current_x_ = 0.0;
+    double current_y_ = 0.0;
 
-    double deltaX = 0.0;
-    double deltaY = 0.0;
+    double delta_x_ = 0.0;
+    double delta_y_ = 0.0;
 
-    double scrollOffsetX = 0.0;
-    double scrollOffsetY = 0.0;
+    double scroll_offset_x_ = 0.0;
+    double scroll_offset_y_ = 0.0;
 
     void reset();
 };
