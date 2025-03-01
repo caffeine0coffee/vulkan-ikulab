@@ -3,16 +3,16 @@
 void App::cursorPositionCallback(GLFWwindow *window, double xPos, double yPos) {
     App *app = static_cast<App *>(glfwGetWindowUserPointer(window));
 
-    app->mouse->deltaX = xPos - app->mouse->currentX;
-    app->mouse->deltaY = yPos - app->mouse->currentY;
+    app->mouse->set_delta_x(xPos - app->mouse->current_x());
+    app->mouse->set_delta_y(yPos - app->mouse->current_y());
 
-    app->mouse->currentX = xPos;
-    app->mouse->currentY = yPos;
+    app->mouse->set_current_x(xPos);
+    app->mouse->set_current_y(yPos);
 
     // record drag end position
-    if (app->mouse->leftButton) {
-        app->mouse->dragEndX = xPos;
-        app->mouse->dragEndY = yPos;
+    if (app->mouse->left_button()) {
+        app->mouse->set_drag_end_x(xPos);
+        app->mouse->set_drag_end_y(yPos);
     }
 }
 
@@ -21,31 +21,31 @@ void App::mouseButtonCallback(GLFWwindow *window, int button, int action,
     App *app = static_cast<App *>(glfwGetWindowUserPointer(window));
     switch (button) {
     case GLFW_MOUSE_BUTTON_LEFT:
-        app->mouse->leftButton = (action == GLFW_PRESS);
+        app->mouse->set_left_button(action == GLFW_PRESS);
         break;
     case GLFW_MOUSE_BUTTON_RIGHT:
-        app->mouse->rightButton = (action == GLFW_PRESS);
+        app->mouse->set_right_button(action == GLFW_PRESS);
         break;
     case GLFW_MOUSE_BUTTON_MIDDLE:
-        app->mouse->middleButton = (action == GLFW_PRESS);
+        app->mouse->set_middle_button(action == GLFW_PRESS);
         break;
     default:
         break;
     }
 
     // init drag position
-    if (app->mouse->leftButton) {
-        app->mouse->dragStartX = app->mouse->currentX;
-        app->mouse->dragStartY = app->mouse->currentY;
-        app->mouse->dragEndX = app->mouse->currentX;
-        app->mouse->dragEndY = app->mouse->currentY;
+    if (app->mouse->left_button()) {
+        app->mouse->set_drag_start_x(app->mouse->current_x());
+        app->mouse->set_drag_start_y(app->mouse->current_y());
+        app->mouse->set_drag_end_x(app->mouse->current_x());
+        app->mouse->set_drag_end_y(app->mouse->current_y());
     }
 }
 
 void App::scrollCallback(GLFWwindow *window, double xOffset, double yOffset) {
     App *app = static_cast<App *>(glfwGetWindowUserPointer(window));
-    app->mouse->scrollOffsetX = xOffset;
-    app->mouse->scrollOffsetY = yOffset;
+    app->mouse->set_scroll_offset_x(xOffset);
+    app->mouse->set_scroll_offset_y(yOffset);
 }
 
 void App::keyCallback(GLFWwindow *window, int key, int scanCode, int action,

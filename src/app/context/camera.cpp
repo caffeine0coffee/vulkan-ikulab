@@ -37,9 +37,9 @@ void Camera::UpdateCamera(const std::shared_ptr<Mouse>& mouse_context,
     static constexpr float kScrollRatio = 1.1;
 
     if (!is_window_focused) {
-        if (mouse_context->leftButton) {
-            double x_diff = mouse_context->deltaX;
-            double y_diff = mouse_context->deltaY;
+        if (mouse_context->left_button()) {
+            double x_diff = mouse_context->delta_x();
+            double y_diff = mouse_context->delta_y();
 
             if (key_context->shift()) {
                 x_diff *= kShiftDiffRatio;
@@ -68,7 +68,7 @@ void Camera::UpdateCamera(const std::shared_ptr<Mouse>& mouse_context,
                 // NOLINTEND(*-magic-numbers)
             }
         }
-        distance_ *= std::pow(kScrollRatio, -mouse_context->scrollOffsetY);
+        distance_ *= std::pow(kScrollRatio, -mouse_context->scroll_offset_y());
     }
 }
 

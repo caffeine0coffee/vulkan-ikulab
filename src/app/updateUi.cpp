@@ -442,12 +442,12 @@ void App::updateDebugWindow() {
     UI::makePadding(10);
 
     // mouse input status
-    ImGui::Text("Cursor Pos: (%.1f, %.1f)", mouse->currentX, mouse->currentY);
-    ImGui::Text("DragStart: (%.1f, %.1f)", mouse->dragStartX,
-                mouse->dragStartY);
-    ImGui::Text("DragEnd: (%.1f, %.1f)", mouse->dragEndX, mouse->dragEndY);
-    ImGui::Text("Button L/R/M: (%d / %d / %d)", mouse->leftButton,
-                mouse->rightButton, mouse->middleButton);
+    ImGui::Text("Cursor Pos: (%.1f, %.1f)", mouse->current_x(), mouse->current_y());
+    ImGui::Text("DragStart: (%.1f, %.1f)", mouse->drag_start_x(),
+                mouse->drag_start_y());
+    ImGui::Text("DragEnd: (%.1f, %.1f)", mouse->drag_end_x(), mouse->drag_end_y());
+    ImGui::Text("Button L/R/M: (%d / %d / %d)", mouse->left_button(),
+                mouse->right_button(), mouse->middle_button());
 
     UI::makePadding(10);
 
